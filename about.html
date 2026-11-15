@@ -3,324 +3,393 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About Amber Salon by Heer | Premium Beauty Care</title>
+    <title>About Amber Salon by Heer | Premium Beauty Care in Gurukul</title>
     <meta
       name="description"
-      content="Learn about Amber Salon by Heer, our premium beauty philosophy, expert team, and commitment to luxury salon care."
+      content="Learn about Amber Salon by Heer Raval in Gurukul, Ahmedabad — our story, philosophy, and commitment to premium unisex beauty care. Rated 9.1/10 by clients."
     />
     <link rel="stylesheet" href="./dist/styles.css" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- GSAP -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14/dist/ScrollTrigger.min.js"></script>
   </head>
   <body class="site-shell overflow-x-hidden">
     <div id="navbar"></div>
 
-    <main>
-      <section class="bg-hero-radial py-24 sm:py-28">
-        <div class="section-wrap">
-          <div class="reveal mx-auto max-w-4xl text-center">
-            <p class="mb-4 text-xs font-extrabold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-sm">
-              Luxury salon story
-            </p>
-            <h1 class="font-display text-5xl leading-[0.92] tracking-[-0.03em] text-amberpurple-deep sm:text-6xl lg:text-7xl">
-              About Amber Salon by Heer
-            </h1>
-            <p class="mx-auto mt-6 max-w-2xl text-base leading-8 text-amberpurple-deep/74 sm:text-lg sm:leading-9">
-              Premium beauty care designed for confidence and elegance.
-            </p>
-          </div>
-        </div>
-      </section>
+    <main class="overflow-hidden bg-white">
 
-      <section id="our-story" class="py-20 sm:py-24">
-        <div class="section-wrap grid items-center gap-8 lg:grid-cols-[0.94fr_1.06fr] mt-7">
-          <div class="reveal">
-            <div class="glass-card rounded-xl p-4 sm:p-5">
-              <div class="flex aspect-[4/4.8] items-center justify-center rounded-xl bg-silk-gradient p-6 text-center text-white">
-                <div>
-                  <p class="text-xs font-extrabold uppercase tracking-[0.28em] text-white/75">Luxury Image Placeholder</p>
-                  <p class="mt-4 font-display text-4xl sm:text-5xl">Elegant salon ambience</p>
-                  <p class="mx-auto mt-4 max-w-md text-sm leading-7 text-white/80">
-                    Replace this premium placeholder with your salon interior, beauty setup, or founder portrait.
-                  </p>
-                </div>
+      <!-- ============ HERO ============ -->
+      <section class="relative overflow-hidden bg-gradient-to-br from-amberpurple-soft/35 via-amberpurple-ivory to-amberpurple-ivory/70 py-16 sm:py-20 lg:py-24">
+        <div class="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-amberpurple-soft/30 blur-3xl"></div>
+        <div class="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1fr_0.85fr] lg:gap-16 lg:px-8">
+          <div class="relative z-10" data-gsap="hero-copy">
+            <p class="mb-5 inline-flex items-center gap-2 rounded-full border border-amberpurple-rich/15 bg-white/80 px-4 py-2 text-[10px] font-extrabold uppercase tracking-[0.24em] text-amberpurple-rich shadow-sm sm:text-xs">
+              <i class="fa-solid fa-heart"></i> Our story, your glow
+            </p>
+            <h1 class="max-w-3xl font-display text-5xl leading-[0.92] tracking-[-0.035em] text-amberpurple-deep sm:text-6xl lg:text-7xl">
+              Beauty is personal. <span class="italic text-amberpurple-rich">So are we.</span>
+            </h1>
+            <p class="mt-6 max-w-xl text-base leading-8 text-amberpurple-deep/70 sm:text-lg sm:leading-9">
+              Get to know Amber Salon by Heer — a Gurukul beauty space shaped by thoughtful details,
+              genuine care, and the belief that feeling beautiful should feel like you.
+            </p>
+            <div class="mt-8 flex flex-wrap items-center gap-4">
+              <a href="#our-story" class="inline-flex items-center gap-2 rounded-full bg-amberpurple-deep px-6 py-3.5 text-sm font-bold text-white shadow-glow transition hover:-translate-y-0.5 hover:bg-amberpurple-rich">
+                Meet our story <i class="fa-solid fa-arrow-down text-xs"></i>
+              </a>
+              <div class="flex items-center gap-3 rounded-full border border-amberpurple-deep/10 bg-white/75 px-4 py-2.5">
+                <span class="grid h-9 w-9 place-items-center rounded-full bg-amberpurple-soft/50 text-amberpurple-rich">
+                  <i class="fa-solid fa-star text-sm"></i>
+                </span>
+                <span class="text-sm font-bold text-amberpurple-deep">9.1/10 <span class="font-medium text-amberpurple-deep/55">client rating</span></span>
               </div>
             </div>
           </div>
 
-          <div class="reveal">
-            <p class="mb-4 text-xs font-extrabold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-sm">
-              Our story
+          <div class="relative mx-auto w-full max-w-lg lg:justify-self-end" data-gsap="hero-image">
+            <div class="absolute -left-5 -top-5 h-24 w-24 rounded-3xl border border-amberpurple-rich/15 sm:-left-7 sm:-top-7 sm:h-32 sm:w-32"></div>
+            <div class="relative overflow-hidden rounded-[2rem] border-[6px] border-white shadow-2xl shadow-amberpurple-deep/15">
+              <img src="./assets/p4.png" alt="The welcoming interior of Amber Salon" class="aspect-[4/3] w-full object-cover sm:aspect-[5/4]" />
+              <div class="absolute inset-0 bg-gradient-to-t from-amberpurple-deep/50 via-transparent to-transparent"></div>
+              <div class="absolute bottom-5 left-5 right-5 flex items-end justify-between text-white sm:bottom-7 sm:left-7 sm:right-7">
+                <div>
+                  <p class="text-[10px] font-bold uppercase tracking-[0.24em] text-white/75">A little haven in</p>
+                  <p class="mt-1 font-display text-3xl sm:text-4xl">Gurukul, Ahmedabad</p>
+                </div>
+                
+              </div>
+            </div>
+            <div class="absolute -bottom-5 right-4 rounded-2xl border border-white/80 bg-white/90 px-4 py-3 shadow-xl backdrop-blur sm:-right-5 sm:px-5">
+              <p class="text-xs font-bold uppercase tracking-[0.15em] text-amberpurple-rich">Care in every detail</p>
+              <p class="mt-1 text-[11px] text-amberpurple-deep/60">Hair · Skin · Bridal · Grooming</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FOUNDER STORY ============ -->
+      <section id="our-story" class="py-20 sm:py-24">
+        <div class="mx-auto grid max-w-7xl items-center gap-10 px-4 sm:px-6 lg:grid-cols-2 lg:gap-16 lg:px-8">
+          <!-- Left visual card -->
+          <div data-gsap="fade-right" class="relative">
+            <div class="absolute -left-4 -top-4 h-full w-full rounded-[2rem] border border-amberpurple-rich/15 sm:-left-6 sm:-top-6"></div>
+            <div class="relative flex aspect-[4/4.4] flex-col justify-end overflow-hidden rounded-[2rem] bg-gradient-to-br from-amberpurple-deep via-amberpurple-rich to-amberpurple-deep p-8 text-white shadow-2xl shadow-amberpurple-deep/15 sm:p-10">
+              <div class="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full border border-white/10"></div>
+              <div class="pointer-events-none absolute -right-8 -top-8 h-48 w-48 rounded-full border border-white/10"></div>
+              <div class="relative mb-auto grid h-20 w-20 place-items-center rounded-full border border-white/25 bg-white/10 backdrop-blur-sm">
+                <span class="font-display text-5xl">H</span>
+              </div>
+              <p class="relative text-xs font-extrabold uppercase tracking-[0.28em] text-white/65">Founder & Beauty Director</p>
+              <p class="relative mt-3 font-display text-4xl leading-tight sm:text-5xl">Heer Raval</p>
+              <p class="relative mt-5 max-w-sm text-sm leading-7 text-white/75">
+                Creating a space where expert beauty care feels personal, welcoming, and unmistakably yours.
+              </p>
+              <p class="relative mt-6 inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2.5 text-xs font-semibold backdrop-blur-sm">
+                <i class="fa-solid fa-location-dot"></i> Gurukul · Ahmedabad
+              </p>
+            </div>
+          </div>
+
+          <!-- Right story -->
+          <div data-gsap="fade-left">
+            <p class="mb-3 text-xs font-extrabold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-sm">
+              <i class="fa-solid fa-seedling mr-2"></i>How it began
             </p>
-            <h2 class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl lg:text-6xl">
-              Built around refined beauty, trust, and thoughtful care.
+            <h2 class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl">
+              A salon born from a love for detail and genuine care.
             </h2>
-            <p class="mt-6 text-base leading-8 text-amberpurple-deep/74 sm:leading-9">
-              Amber Salon by Heer began with a simple vision: to create a beauty space where premium
-              service feels warm, personal, and effortlessly elegant. Every appointment is shaped by
-              detail, from consultation and hygiene to final finish, so clients leave feeling more
-              confident than when they arrived.
+            <p class="mt-6 text-base leading-8 text-amberpurple-deep/70 sm:leading-9">
+              Amber Salon by Heer Raval began with a simple vision: to create a beauty space
+              where premium service feels warm, personal, and effortlessly elegant. Every
+              appointment is shaped by detail — from consultation and hygiene to the final
+              finish — so clients leave feeling more confident than when they arrived.
             </p>
-            <p class="mt-4 text-base leading-8 text-amberpurple-deep/74 sm:leading-9">
-              Our journey has been guided by consistency, client trust, and a commitment to modern
-              beauty care that respects both comfort and quality. Whether it is bridal styling, hair
-              services, skin rituals, or everyday glow maintenance, the focus stays on delivering a
-              premium experience with genuine attention.
+            <p class="mt-4 text-base leading-8 text-amberpurple-deep/70 sm:leading-9">
+              Tucked inside Sanskrit Galleria on Subhash Chowk in Memnagar, the salon has grown
+              into a trusted name for Gurukul and surrounding neighborhoods — earning a
+              <strong>9.1/10 bridal score</strong> from 17 verified clients, and building a
+              community of regulars who come back for the experience as much as the results.
+            </p>
+            <p class="mt-4 text-base leading-8 text-amberpurple-deep/70 sm:leading-9">
+              Our journey has been guided by consistency, client trust, and a commitment to
+              modern beauty care that respects both comfort and quality — whether it’s bridal
+              styling, hair transformations, skin rituals, or everyday grooming.
             </p>
           </div>
         </div>
       </section>
 
-      <section id="philosophy" class="py-20 sm:py-24">
-        <div class="section-wrap">
-          <div class="reveal mb-8 max-w-[44rem]">
-            <p class="mb-4 text-xs font-extrabold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-sm">
-              Our philosophy
+      <!-- ============ FOUNDER QUOTE ============ -->
+      <section class="bg-gradient-to-b from-white to-amberpurple-ivory/20 py-16 sm:py-20">
+        <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+          <div data-gsap="fade-up" class="rounded-3xl bg-white p-8 text-center shadow-xl ring-1 ring-amberpurple-deep/10 sm:p-12">
+            <i class="fa-solid fa-quote-left mb-4 text-3xl text-amberpurple-rich/40 animate-pulse"></i>
+            <p class="font-display text-2xl leading-snug text-amberpurple-deep sm:text-3xl">
+              "Beauty should enhance who you already are — not hide it. My goal has always been
+              to make every client feel seen, cared for, and confident."
             </p>
-            <h2 class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl lg:text-6xl">
+            <p class="mt-6 text-sm font-bold uppercase tracking-[0.2em] text-amberpurple-rich">
+              — Heer Raval, Founder
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PHILOSOPHY / 4 PILLARS ============ -->
+      <section id="philosophy" class="py-20 sm:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mb-10 max-w-2xl" data-gsap="fade-up">
+            <p class="mb-3 text-xs font-extrabold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-sm">
+              <i class="fa-solid fa-compass mr-2 animate-pulse"></i>Our philosophy
+            </p>
+            <h2 class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl">
               Beauty that feels graceful, comfortable, and considered.
             </h2>
           </div>
 
-          <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            <article class="glass-card reveal rounded-xl p-7">
-              <div class="grid h-14 w-14 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich">
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <path d="M12 21s-6-4.35-6-10a3.5 3.5 0 0 1 6-2.45A3.5 3.5 0 0 1 18 11c0 5.65-6 10-6 10Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+          <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            <!-- Beauty -->
+            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
+              <div class="grid h-14 w-14 place-items-center rounded-full bg-amberpurple-soft/50 text-amberpurple-rich">
+                <i class="fa-solid fa-heart text-xl animate-pulse"></i>
               </div>
-              <h3 class="mt-5 font-display text-[2rem] text-amberpurple-deep">Beauty</h3>
-              <p class="mt-3 text-base leading-8 text-amberpurple-deep/74">
+              <h3 class="mt-5 font-display text-[2rem] leading-tight text-amberpurple-deep">Beauty</h3>
+              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">
                 We believe beauty should enhance individuality, not hide it.
               </p>
-            </article>
+            </div>
 
-            <article class="glass-card reveal rounded-xl p-7">
-              <div class="grid h-14 w-14 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich">
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <path d="M7 12a5 5 0 1 1 10 0c0 3.5-2.2 6-5 8-2.8-2-5-4.5-5-8Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+            <!-- Comfort -->
+            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
+              <div class="grid h-14 w-14 place-items-center rounded-full bg-amberpurple-soft/50 text-amberpurple-rich">
+                <i class="fa-solid fa-spa text-xl animate-pulse"></i>
               </div>
-              <h3 class="mt-5 font-display text-[2rem] text-amberpurple-deep">Comfort</h3>
-              <p class="mt-3 text-base leading-8 text-amberpurple-deep/74">
-                A calm and welcoming atmosphere is part of every premium service.
+              <h3 class="mt-5 font-display text-[2rem] leading-tight text-amberpurple-deep">Comfort</h3>
+              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">
+                A calm, welcoming atmosphere is part of every premium service.
               </p>
-            </article>
+            </div>
 
-            <article class="glass-card reveal rounded-xl p-7">
-              <div class="grid h-14 w-14 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich">
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <path d="m9 12 2 2 4-4M4 12a8 8 0 1 0 16 0 8 8 0 1 0-16 0Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+            <!-- Hygiene -->
+            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
+              <div class="grid h-14 w-14 place-items-center rounded-full bg-amberpurple-soft/50 text-amberpurple-rich">
+                <i class="fa-solid fa-hand-sparkles text-xl animate-pulse"></i>
               </div>
-              <h3 class="mt-5 font-display text-[2rem] text-amberpurple-deep">Hygiene</h3>
-              <p class="mt-3 text-base leading-8 text-amberpurple-deep/74">
-                Clean tools, sanitized spaces, and careful preparation are non-negotiable.
+              <h3 class="mt-5 font-display text-[2rem] leading-tight text-amberpurple-deep">Hygiene</h3>
+              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">
+                Clean tools, sanitized spaces, and careful prep are non-negotiable.
               </p>
-            </article>
+            </div>
 
-            <article class="glass-card reveal rounded-xl p-7">
-              <div class="grid h-14 w-14 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich">
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <path d="M12 3v18M6 9h12M7 18c1.4-2 3-3 5-3s3.6 1 5 3" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+            <!-- Confidence -->
+            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
+              <div class="grid h-14 w-14 place-items-center rounded-full bg-amberpurple-soft/50 text-amberpurple-rich">
+                <i class="fa-solid fa-crown text-xl animate-pulse"></i>
               </div>
-              <h3 class="mt-5 font-display text-[2rem] text-amberpurple-deep">Confidence</h3>
-              <p class="mt-3 text-base leading-8 text-amberpurple-deep/74">
-                Our goal is simple: help every client leave feeling more assured and radiant.
+              <h3 class="mt-5 font-display text-[2rem] leading-tight text-amberpurple-deep">Confidence</h3>
+              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">
+                Our goal: help every client leave feeling more assured and radiant.
               </p>
-            </article>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="experts" class="py-20 sm:py-24">
-        <div class="section-wrap">
-          <div class="reveal mb-8 max-w-[44rem]">
-            <p class="mb-4 text-xs font-extrabold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-sm">
-              Meet our experts
+      <!-- ============ WHAT SETS US APART ============ -->
+      <section id="why-us" class="bg-gradient-to-b from-amberpurple-ivory/20 to-white py-20 sm:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mb-10 max-w-2xl" data-gsap="fade-up">
+            <p class="mb-3 text-xs font-extrabold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-sm">
+              <i class="fa-solid fa-shield-heart mr-2 animate-pulse"></i>What sets us apart
             </p>
-            <h2 class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl lg:text-6xl">
-              A team shaped by skill, care, and refined beauty standards.
-            </h2>
-          </div>
-
-          <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            <article class="glass-card reveal rounded-[1.8rem] p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
-              <div class="flex aspect-[4/4.4] items-center justify-center rounded-xlbg-hero-radial p-6 text-center">
-                <div>
-                  <div class="mx-auto grid h-20 w-20 place-items-center rounded-full bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich font-display text-4xl text-white shadow-glow">
-                    H
-                  </div>
-                  <p class="mt-5 text-xs font-extrabold uppercase tracking-[0.26em] text-amberpurple-rich">Image Placeholder</p>
-                </div>
-              </div>
-              <div class="px-2 pb-2 pt-5">
-                <h3 class="font-display text-[2rem] text-amberpurple-deep">Heer Patel</h3>
-                <p class="mt-1 text-sm font-extrabold uppercase tracking-[0.18em] text-amberpurple-rich">Founder & Beauty Director</p>
-                <p class="mt-4 text-base leading-8 text-amberpurple-deep/74">
-                  Leads the salon with a focus on premium client care, modern elegance, and detail-led beauty services.
-                </p>
-              </div>
-            </article>
-
-            <article class="glass-card reveal rounded-[1.8rem] p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
-              <div class="flex aspect-[4/4.4] items-center justify-center rounded-xlbg-hero-radial p-6 text-center">
-                <div>
-                  <div class="mx-auto grid h-20 w-20 place-items-center rounded-full bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich font-display text-4xl text-white shadow-glow">
-                    A
-                  </div>
-                  <p class="mt-5 text-xs font-extrabold uppercase tracking-[0.26em] text-amberpurple-rich">Image Placeholder</p>
-                </div>
-              </div>
-              <div class="px-2 pb-2 pt-5">
-                <h3 class="font-display text-[2rem] text-amberpurple-deep">Anaya Shah</h3>
-                <p class="mt-1 text-sm font-extrabold uppercase tracking-[0.18em] text-amberpurple-rich">Senior Hair Artist</p>
-                <p class="mt-4 text-base leading-8 text-amberpurple-deep/74">
-                  Specializes in polished hair styling, finish work, and client-first consultations for events and everyday glam.
-                </p>
-              </div>
-            </article>
-
-            <article class="glass-card reveal rounded-[1.8rem] p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
-              <div class="flex aspect-[4/4.4] items-center justify-center rounded-xlbg-hero-radial p-6 text-center">
-                <div>
-                  <div class="mx-auto grid h-20 w-20 place-items-center rounded-full bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich font-display text-4xl text-white shadow-glow">
-                    M
-                  </div>
-                  <p class="mt-5 text-xs font-extrabold uppercase tracking-[0.26em] text-amberpurple-rich">Image Placeholder</p>
-                </div>
-              </div>
-              <div class="px-2 pb-2 pt-5">
-                <h3 class="font-display text-[2rem] text-amberpurple-deep">Meera Joshi</h3>
-                <p class="mt-1 text-sm font-extrabold uppercase tracking-[0.18em] text-amberpurple-rich">Skin & Makeup Specialist</p>
-                <p class="mt-4 text-base leading-8 text-amberpurple-deep/74">
-                  Brings a calm, precision-led approach to makeup artistry, skin prep, and occasion-ready glow sessions.
-                </p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <section class="py-20 sm:py-24">
-        <div class="section-wrap">
-          <div class="reveal mb-8 max-w-[44rem]">
-            <p class="mb-4 text-xs font-extrabold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-sm">
-              Why clients trust us
-            </p>
-            <h2 class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl lg:text-6xl">
+            <h2 class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl">
               Consistent care, professional standards, and approachable luxury.
             </h2>
           </div>
 
-          <div class="grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-            <article class="glass-card reveal rounded-xl p-7">
-              <div class="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich text-white shadow-glow">
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <path d="M12 14a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm-7 7a7 7 0 1 1 14 0" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+          <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Skilled Hands -->
+            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5">
+              <div class="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich text-white shadow-md">
+                <i class="fa-solid fa-scissors text-xl"></i>
               </div>
-              <h3 class="mt-5 font-display text-[2rem] text-amberpurple-deep">Experienced Team</h3>
-              <p class="mt-3 text-base leading-8 text-amberpurple-deep/74">
-                Skilled professionals with service discipline and a refined beauty eye.
+              <h3 class="mt-5 font-display text-[2rem] text-amberpurple-deep">Skilled Hands</h3>
+              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">
+                A team trained in modern techniques, with a refined eye for detail and finish.
               </p>
-            </article>
+            </div>
 
-            <article class="glass-card reveal rounded-xl p-7">
-              <div class="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich text-white shadow-glow">
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <path d="M7 21h10M12 3v10m0 0 4-4m-4 4-4-4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+            <!-- Unisex & Inclusive -->
+            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5">
+              <div class="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich text-white shadow-md">
+                <i class="fa-solid fa-venus-mars text-xl"></i>
               </div>
-              <h3 class="mt-5 font-display text-[2rem] text-amberpurple-deep">Premium Products</h3>
-              <p class="mt-3 text-base leading-8 text-amberpurple-deep/74">
-                Carefully chosen products that support finish, longevity, and comfort.
+              <h3 class="mt-5 font-display text-[2rem] text-amberpurple-deep">Unisex & Inclusive</h3>
+              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">
+                A welcoming space for everyone — with services designed for all ages and styles.
               </p>
-            </article>
+            </div>
 
-            <article class="glass-card reveal rounded-xl p-7">
-              <div class="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich text-white shadow-glow">
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <path d="M4 12h16M12 4v16" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+            <!-- Accessible Luxury -->
+            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5">
+              <div class="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich text-white shadow-md">
+                <i class="fa-solid fa-indian-rupee-sign text-xl"></i>
               </div>
-              <h3 class="mt-5 font-display text-[2rem] text-amberpurple-deep">Affordable Luxury</h3>
-              <p class="mt-3 text-base leading-8 text-amberpurple-deep/74">
-                Premium salon care designed to feel elevated while staying accessible.
+              <h3 class="mt-5 font-display text-[2rem] text-amberpurple-deep">Accessible Luxury</h3>
+              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">
+                Premium care designed to feel elevated — while staying genuinely approachable.
               </p>
-            </article>
+            </div>
 
-            <article class="glass-card reveal rounded-xl p-7">
-              <div class="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich text-white shadow-glow">
-                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-                  <path d="M8 12h8M8 16h5M7 4h10a2 2 0 0 1 2 2v12l-3-2-3 2-3-2-3 2V6a2 2 0 0 1 2-2Z" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
+            <!-- Client Trust -->
+            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5">
+              <div class="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich text-white shadow-md">
+                <i class="fa-solid fa-star text-xl"></i>
               </div>
-              <h3 class="mt-5 font-display text-[2rem] text-amberpurple-deep">Friendly & Hygienic Environment</h3>
-              <p class="mt-3 text-base leading-8 text-amberpurple-deep/74">
-                A welcoming setup where clients feel relaxed, respected, and well looked after.
+              <h3 class="mt-5 font-display text-[2rem] text-amberpurple-deep">Client Trust</h3>
+              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">
+                A 9.1/10 bridal score from 17 verified clients — built over years of consistency.
               </p>
-            </article>
+            </div>
+
+            <!-- Quality Products -->
+            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5">
+              <div class="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich text-white shadow-md">
+                <i class="fa-solid fa-leaf text-xl"></i>
+              </div>
+              <h3 class="mt-5 font-display text-[2rem] text-amberpurple-deep">Quality Products</h3>
+              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">
+                Carefully chosen products that support finish, longevity, and client comfort.
+              </p>
+            </div>
+
+            <!-- Rooted in Gurukul -->
+            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5">
+              <div class="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich text-white shadow-md">
+                <i class="fa-solid fa-location-dot text-xl"></i>
+              </div>
+              <h3 class="mt-5 font-display text-[2rem] text-amberpurple-deep">Rooted in Gurukul</h3>
+              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">
+                Proudly part of the Memnagar–Gurukul community, open daily from 10:30 AM to 9 PM.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
+      <!-- ============ CLIENT VOICES ============ -->
+      <section id="reviews" class="py-20 sm:py-24">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div class="mb-10 max-w-2xl" data-gsap="fade-up">
+            <p class="mb-3 text-xs font-extrabold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-sm">
+              <i class="fa-solid fa-comment-dots mr-2 animate-pulse"></i>Client voices
+            </p>
+            <h2 class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl">
+              Real ratings from the people who matter most.
+            </h2>
+          </div>
+
+          <div class="grid gap-6 md:grid-cols-3">
+            <!-- Shehnaz -->
+            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
+              <div class="flex items-center gap-1 text-amberpurple-rich">
+                <i class="fa-solid fa-star"></i>
+                <span class="text-sm font-bold">10/10</span>
+              </div>
+              <p class="mt-5 text-base leading-8 text-amberpurple-deep/70">
+                "Shehnaz rated her experience 10/10 — a perfect score for service, finish, and overall care."
+              </p>
+              <p class="mt-4 text-sm font-bold text-amberpurple-deep">
+                <i class="fa-solid fa-user-circle mr-1.5 text-amberpurple-rich"></i>Shehnaz
+              </p>
+            </div>
+
+            <!-- Riya -->
+            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
+              <div class="flex items-center gap-1 text-amberpurple-rich">
+                <i class="fa-solid fa-star"></i>
+                <span class="text-sm font-bold">9/10</span>
+              </div>
+              <p class="mt-5 text-base leading-8 text-amberpurple-deep/70">
+                "Riya gave a 9/10, highlighting the salon's consistent quality and welcoming atmosphere."
+              </p>
+              <p class="mt-4 text-sm font-bold text-amberpurple-deep">
+                <i class="fa-solid fa-user-circle mr-1.5 text-amberpurple-rich"></i>Riya
+              </p>
+            </div>
+
+            <!-- Pinal -->
+            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
+              <div class="flex items-center gap-1 text-amberpurple-rich">
+                <i class="fa-solid fa-star"></i>
+                <span class="text-sm font-bold">9/10</span>
+              </div>
+              <p class="mt-5 text-base leading-8 text-amberpurple-deep/70">
+                "Pinal scored the salon 9/10, praising the value and professionalism of the team."
+              </p>
+              <p class="mt-4 text-sm font-bold text-amberpurple-deep">
+                <i class="fa-solid fa-user-circle mr-1.5 text-amberpurple-rich"></i>Pinal
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ CTA ============ -->
       <section id="contact-cta" class="py-20 sm:py-24">
-        <div class="section-wrap">
-          <div class="reveal overflow-hidden rounded-xl bg-silk-gradient px-7 py-10 text-white shadow-velvet sm:px-10 sm:py-14">
-            <div class="flex flex-col items-start justify-between gap-7 lg:flex-row lg:items-center">
+        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+          <div data-gsap="fade-up" class="overflow-hidden rounded-3xl bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich px-7 py-10 text-white shadow-2xl sm:px-10 sm:py-14">
+            <div class="flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
               <div class="max-w-3xl">
-                <p class="mb-4 text-xs font-extrabold uppercase tracking-[0.28em] text-white/70 sm:text-sm">
-                  Premium booking
+                <p class="mb-3 text-xs font-extrabold uppercase tracking-[0.28em] text-white/60 sm:text-sm">
+                  <i class="fa-solid fa-store mr-2 animate-pulse"></i>Come say hello
                 </p>
-                <h2 class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-white sm:text-5xl lg:text-6xl">
-                  Book Your Beauty Appointment Today
+                <h2 class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-white sm:text-5xl">
+                  Visit us at Sanskrit Galleria, Gurukul.
                 </h2>
-                <p class="mt-5 text-base leading-8 text-white/80 sm:text-lg sm:leading-9">
-                  Reserve your session for hair, skin, makeup, or bridal services and experience
-                  beauty care designed with comfort, quality, and elegance in mind.
+                <p class="mt-5 text-base leading-8 text-white/75 sm:text-lg sm:leading-9">
+                  A/114, 1st Floor, Subhash Chowk, Tarun Nagar Part 2, Memnagar,
+                  Ahmedabad – 380052. Open daily, 10:30 AM – 9:00 PM.
+                  We’d love to be part of your beauty story.
                 </p>
               </div>
 
               <div class="flex flex-wrap gap-4">
-                <a
-                  class="button-primary bg-white text-amberpurple-deep hover:bg-amberpurple-ivory"
-                  href="https://wa.me/9512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20an%20appointment."
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                  Book Appointment
+                <a href="https://wa.me/916355167304?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20know%20more."
+                   target="_blank" rel="noreferrer"
+                   class="inline-flex items-center gap-2 rounded-full bg-white px-8 py-3.5 text-sm font-bold text-amberpurple-deep shadow-lg transition hover:bg-amberpurple-ivory">
+                  <i class="fa-brands fa-whatsapp text-lg"></i> Chat on WhatsApp
                 </a>
-                <a
-                  class="button-secondary border-white/25 bg-white/10 text-white hover:border-white/40 hover:text-white"
-                  href="tel:+9512517604"
-                >
-                  Call Now
+                <a href="tel:+916355167304"
+                   class="inline-flex items-center gap-2 rounded-full border border-white/25 bg-white/10 px-8 py-3.5 text-sm font-bold text-white backdrop-blur-sm transition hover:border-white/50 hover:bg-white/20">
+                  <i class="fa-solid fa-phone"></i> Call 63551 67304
                 </a>
               </div>
             </div>
           </div>
         </div>
       </section>
+
     </main>
 
     <div id="footer"></div>
 
-    <a href="https://wa.me/9512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20an%20appointment."
-    target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"
-    class="fixed bottom-6 right-6 z-40 grid h-[3.75rem] w-[3.75rem] place-items-center rounded-full bg-[#25D366] text-white shadow-[0_20px_42px_rgba(37,211,102,0.34)] transition hover:-translate-y-1">
-    <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path
-        d="M19.05 4.94A9.86 9.86 0 0 0 12.02 2 9.95 9.95 0 0 0 3.4 16.92L2 22l5.22-1.37a10 10 0 0 0 4.78 1.22h.01A9.99 9.99 0 0 0 22 11.94a9.84 9.84 0 0 0-2.95-7Zm-7.04 15.2h-.01a8.31 8.31 0 0 1-4.23-1.16l-.3-.18-3.1.81.83-3.02-.2-.31a8.33 8.33 0 0 1-1.3-4.44c0-4.59 3.74-8.33 8.34-8.33 2.22 0 4.3.86 5.86 2.44a8.24 8.24 0 0 1 2.43 5.89 8.34 8.34 0 0 1-8.32 8.3Zm4.57-6.23c-.25-.13-1.47-.73-1.7-.81-.22-.08-.38-.12-.55.13-.16.24-.63.8-.77.96-.14.16-.28.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.73-.65-1.22-1.46-1.37-1.7-.14-.24-.02-.38.11-.5.11-.11.25-.28.37-.43.13-.14.17-.24.25-.4.08-.16.04-.3-.02-.43-.06-.13-.55-1.33-.76-1.83-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.31.98 2.47.12.16 1.69 2.59 4.1 3.64.57.25 1.01.39 1.36.5.57.18 1.09.15 1.5.09.46-.07 1.47-.6 1.68-1.19.2-.58.2-1.08.14-1.18-.05-.1-.22-.16-.47-.29Z" />
-    </svg>
-  </a>
+    <!-- Floating WhatsApp -->
+    <a href="https://wa.me/916355167304?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20an%20appointment."
+       target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"
+       class="fixed bottom-6 right-6 z-40 grid h-[3.75rem] w-[3.75rem] place-items-center rounded-full bg-[#25D366] text-white shadow-[0_20px_42px_rgba(37,211,102,0.34)] transition hover:-translate-y-1">
+      <i class="fa-brands fa-whatsapp text-3xl"></i>
+    </a>
 
-  <button type="button" data-back-to-top aria-label="Back to top"
-    class="pointer-events-none fixed bottom-24 right-6 z-40 grid h-12 w-12 translate-y-4 place-items-center rounded-full border border-amberpurple-deep/10 bg-white/90 text-amberpurple-deep opacity-0 shadow-velvet transition">
-    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-      <path d="m6 15 6-6 6 6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-    </svg>
-  </button>
+    <!-- Back to top -->
+    <button type="button" data-back-to-top aria-label="Back to top"
+      class="pointer-events-none fixed bottom-24 right-6 z-40 grid h-12 w-12 translate-y-4 place-items-center rounded-full border border-amberpurple-deep/10 bg-white/90 text-amberpurple-deep opacity-0 shadow-lg transition">
+      <i class="fa-solid fa-chevron-up text-lg"></i>
+    </button>
 
+    <script src="./assets/js/about.js"></script>
     <script src="./assets/js/layout.js"></script>
   </body>
 </html>
