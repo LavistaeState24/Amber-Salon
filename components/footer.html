@@ -5,64 +5,112 @@
   referrerpolicy="no-referrer"
 />
 
-<footer class="pb-12 pt-8">
-  <div class="section-wrap">
-    <div class="bg-white rounded-[2rem] p-7 sm:p-10">
+<footer class="relative overflow-hidden bg-silk-gradient pb-12 pt-8">
+
+  <!-- Extra gradient wash for depth (blends over the silk gradient) -->
+  <div aria-hidden="true"
+    class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(49,18,75,0.85)_10%,rgba(94,43,138,0.55)_10%,rgba(49,18,75,0.92)_100%)]"></div>
+
+  <!-- Ambient glows behind the glass so the blur has colour to pick up -->
+  <div aria-hidden="true"
+    class="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-amberpurple-rich/50 blur-3xl"></div>
+  <div aria-hidden="true"
+    class="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-amberpurple-soft/25 blur-3xl"></div>
+  <div aria-hidden="true"
+    class="pointer-events-none absolute left-1/2 top-1/3 h-64 w-64 -translate-x-1/2 rounded-full bg-fuchsia-400/10 blur-3xl"></div>
+
+  <div class="section-wrap relative">
+
+    <!-- Glass card — sheen (before) + top hairline (after) -->
+    <div
+      class="relative rounded-[2rem] border border-white/20 p-7 sm:p-10
+             bg-[linear-gradient(135deg,rgba(255,255,255,0.14)_0%,rgba(255,255,255,0.06)_45%,rgba(255,255,255,0.10)_100%)]
+             backdrop-blur-[28px] backdrop-saturate-[180%]
+             shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.35),inset_0_-1px_0_rgba(255,255,255,0.08)]
+             before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:opacity-90
+             before:bg-[linear-gradient(120deg,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.06)_22%,transparent_55%)]
+             before:content-['']
+             after:pointer-events-none after:absolute after:left-[8%] after:right-[8%] after:top-0 after:h-px
+             after:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.75),transparent)]
+             after:content-['']">
+
       <div class="grid gap-10 lg:grid-cols-[1.15fr_0.85fr_0.9fr_0.8fr]">
+
+        <!-- Brand -->
         <div>
           <div class="flex items-center gap-3">
             <a href="index.html" class="flex items-center">
-              <img src="../assets/logo.png" alt="Amber Salon by Heer Logo"
-                class="h-14 w-auto transition-all duration-300 group-hover:scale-105 sm:h-24" />
+              <span
+                class="inline-flex items-center rounded-2xl border border-white/40 bg-white/90 p-2 shadow-sm backdrop-blur">
+                <img src="../assets/logo.png" alt="Amber Salon by Heer Logo" class="h-20 w-auto sm:h-20" />
+              </span>
             </a>
           </div>
-          <p class=" max-w-md text-sm leading-7 text-amberpurple-deep/72">
+
+          <p class="mt-5 max-w-md text-sm leading-7 text-white/75">
             A premium salon experience focused on beauty, comfort, hygiene, and confidence for every client.
           </p>
-          <div class="mt-4 flex gap-2">
-            <a href="https://instagram.com" target="_blank" rel="noreferrer" class="transition px-3 py-2 bg-amberpurple-deep text-white rounded-full hover:bg-amberpurple-ivory hover:text-amberpurple-deep">
-              <i class="fab fa-instagram"></i>
+
+          <div class="mt-5 flex gap-3">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" aria-label="Instagram"
+              class="grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-white/10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] backdrop-blur transition hover:-translate-y-0.5 hover:border-white/60 hover:bg-white hover:text-amberpurple-deep hover:shadow-md">
+              <i class="fab fa-instagram" aria-hidden="true"></i>
             </a>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" class="transition px-4 py-2 bg-amberpurple-deep text-white rounded-full hover:bg-amberpurple-ivory hover:text-amberpurple-deep">
-              <i class="fab fa-facebook-f"></i>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" aria-label="Facebook"
+              class="grid h-10 w-10 place-items-center rounded-full border border-white/25 bg-white/10 text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.4)] backdrop-blur transition hover:-translate-y-0.5 hover:border-white/60 hover:bg-white hover:text-amberpurple-deep hover:shadow-md">
+              <i class="fab fa-facebook-f" aria-hidden="true"></i>
             </a>
           </div>
         </div>
 
+        <!-- Quick links -->
         <div>
-          <p class="text-xl font-bold text-amberpurple-rich">Quick Links</p>
-          <div class="mt-5 flex flex-col gap-3 text-sm text-amberpurple-deep/75">
-            <a class="transition hover:text-amberpurple-rich" href="./index.html">Home</a>
-            <a class="transition hover:text-amberpurple-rich" href="./about.html">About Us</a>
-            <a class="transition hover:text-amberpurple-rich" href="./services.html">Services</a>
-            <a class="transition hover:text-amberpurple-rich" href="./packages.html">Packages</a>
-            <a class="transition hover:text-amberpurple-rich" href="./gallery.html">Gallery</a>
-            <a class="transition hover:text-amberpurple-rich" href="./contact.html">Contact</a>
+          <p class="text-xl font-bold text-amberpurple-soft">Quick Links</p>
+          <div class="mt-5 flex flex-col gap-3 text-sm text-white/75">
+            <a class="transition hover:text-white" href="./index.html">Home</a>
+            <a class="transition hover:text-white" href="./about.html">About Us</a>
+            <a class="transition hover:text-white" href="./services.html">Services</a>
+            <a class="transition hover:text-white" href="./packages.html">Packages</a>
+            <a class="transition hover:text-white" href="./gallery.html">Gallery</a>
+            <a class="transition hover:text-white" href="./contact.html">Contact</a>
           </div>
         </div>
 
+        <!-- Legal -->
         <div>
-          <p class="text-xl font-bold text-amberpurple-rich">Legal</p>
-          <div class="mt-5 flex flex-col gap-3 text-sm text-amberpurple-deep/75">
-            <a class="transition hover:text-amberpurple-rich" href="./privacy.html">Privacy Policy</a>
-            <a class="transition hover:text-amberpurple-rich" href="./terms.html">Terms &amp;
-              Conditions</a>
+          <p class="text-xl font-bold text-amberpurple-soft">Legal</p>
+          <div class="mt-5 flex flex-col gap-3 text-sm text-white/75">
+            <a class="transition hover:text-white" href="./privacy.html">Privacy Policy</a>
+            <a class="transition hover:text-white" href="./terms.html">Terms &amp; Conditions</a>
           </div>
         </div>
 
+        <!-- Contact -->
         <div>
-          <p class="text-xl font-bold text-amberpurple-rich">Contact</p>
-          <div class="mt-4  text-sm leading-7 text-amberpurple-deep/75">
-            <i class="fas fa-envelope mr-2"></i><a class="transition hover:text-amberpurple-rich" href="mailto:info@ambersalon.com">info@ambersalon.com</a>
-            <p><i class="fas fa-phone mr-2"></i><a class="transition hover:text-amberpurple-rich" href="tel:+919512517604">+91 95125 17604</a></p>
-            <p><i class="fas fa-map-marker-alt mr-2"></i>A/114,1st floor, Sanskrit galleria, Subhash Chowk, Tarun Nagar Part 2, Memnagar, Ahmedabad, Gujarat 380052</p>
+          <p class="text-xl font-bold text-amberpurple-soft">Contact</p>
+          <div class="mt-5 space-y-3 text-sm leading-7 text-white/75">
+            <p class="flex items-start gap-3">
+              <i class="fas fa-envelope mt-2 text-amberpurple-soft" aria-hidden="true"></i>
+              <a class="transition hover:text-white" href="mailto:info@ambersalon.com">info@ambersalon.com</a>
+            </p>
+            <p class="flex items-start gap-3">
+              <i class="fas fa-phone mt-2  text-amberpurple-soft" aria-hidden="true"></i>
+              <a class="transition hover:text-white" href="tel:+919512517604">+91 95125 17604</a>
+            </p>
+            <p class="flex items-start gap-3">
+              <i class="fas fa-map-marker-alt mt-2 text-amberpurple-soft" aria-hidden="true"></i>
+              <span>A/114, 1st floor, Sanskrit Galleria, Subhash Chowk, Tarun Nagar Part 2, Memnagar, Ahmedabad,
+                Gujarat 380052</span>
+            </p>
           </div>
         </div>
+
       </div>
 
-      <div class="mt-10 border-t border-amberpurple-rich/12 pt-6 text-sm text-amberpurple-deep/65">
+      <div class="mt-10 border-t border-white/20 pt-6 text-sm text-white/75">
         © <span data-current-year></span> Amber Salon by Heer. All rights reserved.
       </div>
+
     </div>
   </div>
 </footer>
