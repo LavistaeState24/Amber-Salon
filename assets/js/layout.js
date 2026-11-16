@@ -236,6 +236,7 @@ document.addEventListener("DOMContentLoaded", async () => {
   ]);
 
   initializeLayout();
+  setupGsapAnimations();
 });
 
 // contact form submission to WhatsApp
@@ -299,5 +300,3 @@ if (contactForm) {
     );
   });
 }
-
-

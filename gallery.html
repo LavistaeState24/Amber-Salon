@@ -4,10 +4,20 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Gallery | Amber Salon by Heer</title>
+    <title>Menu Gallery | Amber Salon by Heer</title>
     <meta name="description"
-        content="Explore Amber Salon by Heer gallery featuring salon ambience, bridal looks, hair styling, makeup, and beauty transformations." />
+        content="Explore Amber Salon by Heer full service menu featuring hair, skin, nails, makeup, and premium treatments." />
+
+    <!-- Your existing stylesheet -->
     <link rel="stylesheet" href="./dist/styles.css" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 </head>
 
 <body class="site-shell overflow-x-hidden">
@@ -15,20 +25,21 @@
 
     <main>
         <!-- Hero -->
-        <section class="bg-hero-radial py-24 sm:py-28">
+        <section class="bg-hero-radial py-24 sm:py-28 relative overflow-hidden">
             <div class="section-wrap">
-                <div class="reveal mx-auto max-w-4xl text-center">
-                    <p class="mb-4 text-xs font-extrabold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-sm">
-                        Our Gallery
+                <div class="mx-auto max-w-4xl text-center">
+                    <p data-hero-sub
+                        class="mb-4 text-xs font-extrabold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-sm">
+                        Our Services
                     </p>
-                    <h1
+                    <h1 data-hero-title
                         class="font-display text-5xl leading-[0.92] tracking-[-0.03em] text-amberpurple-deep sm:text-6xl lg:text-7xl">
-                        Beauty Moments Captured
+                        The Amber Menu
                     </h1>
-                    <p
+                    <p data-hero-text
                         class="mx-auto mt-6 max-w-2xl text-base leading-8 text-amberpurple-deep/74 sm:text-lg sm:leading-9">
-                        A glimpse of our salon ambience, bridal elegance, hair styling, makeup artistry, and client
-                        transformations.
+                        Browse our comprehensive range of premium beauty services. Every treatment is crafted with
+                        precision, care, and luxury.
                     </p>
                 </div>
             </div>
@@ -37,98 +48,205 @@
         <!-- Gallery Intro -->
         <section class="py-20 sm:py-24">
             <div class="section-wrap">
-                <div class="reveal mb-10 max-w-[44rem]">
+                <div data-reveal-text class="mb-12 text-center max-w-[44rem] mx-auto">
                     <p class="mb-4 text-xs font-extrabold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-sm">
                         Premium Beauty Work
                     </p>
                     <h2
                         class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl lg:text-6xl">
-                        Every look is designed with detail, comfort, and confidence.
+                        Explore our services.
                     </h2>
                 </div>
 
-                <!-- Gallery Grid -->
-                <div class="grid gap-6 sm:grid-cols-3 lg:grid-cols-3">
+                <!-- Uniform Editorial Grid with Hover Overlays -->
+                <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 
-                    <a href="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg" target="_blank"
-                        class="glass-card reveal group overflow-hidden rounded-[1.8rem] p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
-                        <img src="https://images.pexels.com/photos/3993449/pexels-photo-3993449.jpeg" alt="Bridal Look"
-                            class="aspect-[4/5] w-full rounded-xlobject-cover transition duration-500 group-hover:scale-105" />
-                        <h3 class="px-2 pt-5 font-display text-3xl text-amberpurple-deep">Bridal Look</h3>
+                    <!-- 1. Eyebrow & Waxing -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/Eyebrow & Waxing.png" alt="Eyebrow & Waxing" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <!-- Overlay: Hidden by default, shows on hover -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Eyebrow & Waxing</h3>
+                                
+                            </div>
+                        </div>
                     </a>
 
-                    <a href="https://images.pexels.com/photos/7755655/pexels-photo-7755655.jpeg" target="_blank"
-                        class="glass-card reveal group overflow-hidden rounded-[1.8rem] p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
-
-                        <img src="https://images.pexels.com/photos/7755655/pexels-photo-7755655.jpeg" alt="Hair Styling"
-                            class="aspect-[4/5] w-full rounded-xlobject-cover transition duration-500 group-hover:scale-105" />
-
-                        <h3 class="px-2 pt-5 font-display text-3xl text-amberpurple-deep">
-                            Hair Styling
-                        </h3>
+                    <!-- 2. Eyebrow Shaping -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/Eyebrow .png" alt="Eyebrow Shaping" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Eyebrow Shaping</h3>
+                                
+                            </div>
+                        </div>
                     </a>
 
-                    <a href="https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg" target="_blank"
-                        class="glass-card reveal group overflow-hidden rounded-[1.8rem] p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
-                        <img src="https://images.pexels.com/photos/3997379/pexels-photo-3997379.jpeg" alt="Makeup Art"
-                            class="aspect-[4/5] w-full rounded-xlobject-cover transition duration-500 group-hover:scale-105" />
-                        <h3 class="px-2 pt-5 font-display text-3xl text-amberpurple-deep">Makeup Art</h3>
+                    <!-- 3. Facial Treatment (Men) -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/Facial Treatment (Men).png" alt="Facial Treatment (Men)" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Facial Treatment (Men)</h3>
+                                
+                            </div>
+                        </div>
                     </a>
 
-                    <a href="https://images.pexels.com/photos/3997993/pexels-photo-3997993.jpeg" target="_blank"
-                        class="glass-card reveal group overflow-hidden rounded-[1.8rem] p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
-                        <img src="https://images.pexels.com/photos/3997993/pexels-photo-3997993.jpeg" alt="Skin Glow"
-                            class="aspect-[4/5] w-full rounded-xlobject-cover transition duration-500 group-hover:scale-105" />
-                        <h3 class="px-2 pt-5 font-display text-3xl text-amberpurple-deep">Skin Glow</h3>
+                    <!-- 4. Facial Treatment (Women) -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/Facial Treatment (Women).png" alt="Facial Treatment (Women)" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Facial Treatment (Women)</h3>
+                                
+                            </div>
+                        </div>
                     </a>
 
-                    <a href="https://images.pexels.com/photos/3992870/pexels-photo-3992870.jpeg" target="_blank"
-                        class="glass-card reveal group overflow-hidden rounded-[1.8rem] p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
-                        <img src="https://images.pexels.com/photos/3992870/pexels-photo-3992870.jpeg"
-                            alt="Salon Ambience"
-                            class="aspect-[4/5] w-full rounded-xlobject-cover transition duration-500 group-hover:scale-105" />
-                        <h3 class="px-2 pt-5 font-display text-3xl text-amberpurple-deep">Salon Ambience</h3>
+                    <!-- 5. Groom Hair -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/Groom Hair.png" alt="Groom Hair" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Groom Hair</h3>
+                                
+                            </div>
+                        </div>
                     </a>
 
-                    <a href="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg" target="_blank"
-    class="glass-card reveal group overflow-hidden rounded-[1.8rem] p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
-
-    <img
-        src="https://images.pexels.com/photos/3762879/pexels-photo-3762879.jpeg"
-        alt="Face Treatment"
-        class="aspect-[4/5] w-full rounded-xlobject-cover transition duration-500 group-hover:scale-105" />
-
-    <h3 class="px-2 pt-5 font-display text-3xl text-amberpurple-deep">
-        Face Treatment
-    </h3>
-</a>
-
-                    <!-- 3 More Cards -->
-
-                    <a href="https://images.pexels.com/photos/3993443/pexels-photo-3993443.jpeg" target="_blank"
-                        class="glass-card reveal group overflow-hidden rounded-[1.8rem] p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
-                        <img src="https://images.pexels.com/photos/3993443/pexels-photo-3993443.jpeg" alt="Nail Art"
-                            class="aspect-[4/5] w-full rounded-xlobject-cover transition duration-500 group-hover:scale-105" />
-                        <h3 class="px-2 pt-5 font-display text-3xl text-amberpurple-deep">Nail Art</h3>
+                    <!-- 6. Hair Coloring (Men) -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/Hair Coloring male.png" alt="Hair Coloring (Men)" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Hair Coloring (Men)</h3>
+                                
+                            </div>
+                        </div>
                     </a>
 
-                    <a href="https://images.pexels.com/photos/3992872/pexels-photo-3992872.jpeg" target="_blank"
-                        class="glass-card reveal group overflow-hidden rounded-[1.8rem] p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
-                        <img src="https://images.pexels.com/photos/3992872/pexels-photo-3992872.jpeg" alt="Hair Care"
-                            class="aspect-[4/5] w-full rounded-xlobject-cover transition duration-500 group-hover:scale-105" />
-                        <h3 class="px-2 pt-5 font-display text-3xl text-amberpurple-deep">Hair Care</h3>
+                    <!-- 7. Hair Coloring -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/Hair Coloring.png" alt="Hair Coloring" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Hair Coloring</h3>
+                                
+                            </div>
+                        </div>
                     </a>
 
-                    <a href="https://images.pexels.com/photos/6621462/pexels-photo-6621462.jpeg" target="_blank"
-                        class="glass-card reveal group overflow-hidden rounded-[1.8rem] p-4 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
+                    <!-- 8. Hair Cut -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/hair cut.png" alt="Hair Cut" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Hair Cut</h3>
+                                
+                            </div>
+                        </div>
+                    </a>
 
-                        <img src="https://images.pexels.com/photos/6621462/pexels-photo-6621462.jpeg"
-                            alt="Facial Treatment"
-                            class="aspect-[4/5] w-full rounded-xlobject-cover transition duration-500 group-hover:scale-105" />
+                    <!-- 9. Hair Wash -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/hair wash.jpg" alt="Hair Wash" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Hair Wash</h3>
+                                
+                            </div>
+                        </div>
+                    </a>
 
-                        <h3 class="px-2 pt-5 font-display text-3xl text-amberpurple-deep">
-                            Facial Treatment
-                        </h3>
+                    <!-- 10. Hair Wash 2 -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/Hairwash.jpg" alt="Hair Wash" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Hair Wash</h3>
+                                
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 11. Manicure & Pedicure (Women) -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/Manicure & Pedicure Women.png" alt="Manicure & Pedicure (Women)" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Manicure & Pedicure (Women)</h3>
+                                
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 12. Manicure & Pedicure -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/Manicure & pedicure.png" alt="Manicure & Pedicure" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Manicure & Pedicure</h3>
+                                
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 13. Nourishing Hair Treatment -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/Nourishing Hair Treatment.png" alt="Nourishing Hair Treatment" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Nourishing Hair Treatment</h3>
+                                
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 14. Pre-Wedding Facial & Skincare -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/Pre-Wedding Facial & Skincare.png" alt="Pre-Wedding Facial & Skincare" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Pre-Wedding Facial & Skincare</h3>
+                                
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 15. Scalp & Hair Treatment -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/Scalp & Hair Treatment.png" alt="Scalp & Hair Treatment" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Scalp & Hair Treatment</h3>
+                                
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 16. Skin Treatment (Women) -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/Skin Treatment (Women).png" alt="Skin Treatment (Women)" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Skin Treatment (Women)</h3>
+                                
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- 17. Waxing -->
+                    <a href="#book" data-animate class="glass-card group relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/Waxing.png" alt="Waxing" class="aspect-[4/5] w-full object-cover transition duration-500 group-hover:scale-110" />
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/90 via-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6">
+                                <h3 class="font-display text-2xl text-white transform translate-y-4 group-hover:translate-y-0 transition-transform duration-500 drop-shadow-md">Waxing</h3>
+                                
+                            </div>
+                        </div>
                     </a>
 
                 </div>
@@ -136,9 +254,9 @@
         </section>
 
         <!-- CTA -->
-        <section class="py-20 sm:py-24">
+        <section id="book" class="py-20 sm:py-24">
             <div class="section-wrap">
-                <div
+                <div data-animate-cta
                     class="reveal overflow-hidden rounded-xl bg-silk-gradient px-7 py-10 text-white shadow-velvet sm:px-10 sm:py-14">
                     <div class="flex flex-col items-start justify-between gap-7 lg:flex-row lg:items-center">
                         <div class="max-w-3xl">
@@ -167,21 +285,18 @@
 
     <div id="footer"></div>
 
+    <!-- WhatsApp Float -->
     <a href="https://wa.me/9512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20an%20appointment."
-    target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"
-    class="fixed bottom-6 right-6 z-40 grid h-[3.75rem] w-[3.75rem] place-items-center rounded-full bg-[#25D366] text-white shadow-[0_20px_42px_rgba(37,211,102,0.34)] transition hover:-translate-y-1">
-    <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path
-        d="M19.05 4.94A9.86 9.86 0 0 0 12.02 2 9.95 9.95 0 0 0 3.4 16.92L2 22l5.22-1.37a10 10 0 0 0 4.78 1.22h.01A9.99 9.99 0 0 0 22 11.94a9.84 9.84 0 0 0-2.95-7Zm-7.04 15.2h-.01a8.31 8.31 0 0 1-4.23-1.16l-.3-.18-3.1.81.83-3.02-.2-.31a8.33 8.33 0 0 1-1.3-4.44c0-4.59 3.74-8.33 8.34-8.33 2.22 0 4.3.86 5.86 2.44a8.24 8.24 0 0 1 2.43 5.89 8.34 8.34 0 0 1-8.32 8.3Zm4.57-6.23c-.25-.13-1.47-.73-1.7-.81-.22-.08-.38-.12-.55.13-.16.24-.63.8-.77.96-.14.16-.28.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.73-.65-1.22-1.46-1.37-1.7-.14-.24-.02-.38.11-.5.11-.11.25-.28.37-.43.13-.14.17-.24.25-.4.08-.16.04-.3-.02-.43-.06-.13-.55-1.33-.76-1.83-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.31.98 2.47.12.16 1.69 2.59 4.1 3.64.57.25 1.01.39 1.36.5.57.18 1.09.15 1.5.09.46-.07 1.47-.6 1.68-1.19.2-.58.2-1.08.14-1.18-.05-.1-.22-.16-.47-.29Z" />
-    </svg>
-  </a>
+        target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"
+        class="group fixed bottom-6 right-6 z-40 grid h-[3.75rem] w-[3.75rem] place-items-center rounded-full bg-[#25D366] text-white shadow-[0_20px_42px_rgba(37,211,102,0.34)] transition-all duration-300 hover:-translate-y-2 hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-3xl transition-transform duration-300 group-hover:animate-pulse"></i>
+    </a>
 
-  <button type="button" data-back-to-top aria-label="Back to top"
-    class="pointer-events-none fixed bottom-24 right-6 z-40 grid h-12 w-12 translate-y-4 place-items-center rounded-full border border-amberpurple-deep/10 bg-white/90 text-amberpurple-deep opacity-0 shadow-velvet transition">
-    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-      <path d="m6 15 6-6 6 6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-    </svg>
-  </button>
+    <!-- Back to Top -->
+    <button type="button" data-back-to-top aria-label="Back to top"
+        class="pointer-events-none fixed bottom-24 right-6 z-40 grid h-12 w-12 translate-y-4 place-items-center rounded-full border border-amberpurple-deep/10 bg-white/90 text-amberpurple-deep opacity-0 shadow-velvet transition hover:bg-white hover:-translate-y-1">
+        <i class="fa-solid fa-arrow-up text-lg transition-transform duration-300"></i>
+    </button>
 
     <script src="./assets/js/layout.js"></script>
 </body>
