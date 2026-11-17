@@ -20,6 +20,17 @@
 
     <main class="overflow-hidden bg-white">
 
+      <nav aria-label="Breadcrumb" class="bg-amberpurple-ivory/80">
+        <div class="section-wrap flex items-center gap-2 py-3 text-sm text-amberpurple-deep/70">
+          <a href="./index.html" class="flex items-center gap-1 transition hover:text-amberpurple-deep">
+            <i class="fa-solid fa-house mr-2"></i> Home
+          </a>
+          <span class="text-amberpurple-deep/40">/</span>
+          <span>About</span>
+        </div>
+      </nav>
+      
+
       <!-- ============ HERO ============ -->
       <section class="relative overflow-hidden bg-gradient-to-br from-amberpurple-soft/35 via-amberpurple-ivory to-amberpurple-ivory/70 py-16 sm:py-20 lg:py-24">
         <div class="pointer-events-none absolute -right-32 -top-32 h-96 w-96 rounded-full bg-amberpurple-soft/30 blur-3xl"></div>
@@ -151,7 +162,7 @@
 
           <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             <!-- Beauty -->
-            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
+            <div  class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
               <div class="grid h-14 w-14 place-items-center rounded-full bg-amberpurple-soft/50 text-amberpurple-rich">
                 <i class="fa-solid fa-heart text-xl animate-pulse"></i>
               </div>
@@ -162,7 +173,7 @@
             </div>
 
             <!-- Comfort -->
-            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
+            <div  class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
               <div class="grid h-14 w-14 place-items-center rounded-full bg-amberpurple-soft/50 text-amberpurple-rich">
                 <i class="fa-solid fa-spa text-xl animate-pulse"></i>
               </div>
@@ -173,7 +184,7 @@
             </div>
 
             <!-- Hygiene -->
-            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
+            <div  class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
               <div class="grid h-14 w-14 place-items-center rounded-full bg-amberpurple-soft/50 text-amberpurple-rich">
                 <i class="fa-solid fa-hand-sparkles text-xl animate-pulse"></i>
               </div>
@@ -184,7 +195,7 @@
             </div>
 
             <!-- Confidence -->
-            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
+            <div  class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
               <div class="grid h-14 w-14 place-items-center rounded-full bg-amberpurple-soft/50 text-amberpurple-rich">
                 <i class="fa-solid fa-crown text-xl animate-pulse"></i>
               </div>
@@ -211,7 +222,7 @@
 
           <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             <!-- Skilled Hands -->
-            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5">
+            <div  class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5">
               <div class="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich text-white shadow-md">
                 <i class="fa-solid fa-scissors text-xl"></i>
               </div>
@@ -222,7 +233,7 @@
             </div>
 
             <!-- Unisex & Inclusive -->
-            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5">
+            <div  class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5">
               <div class="grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich text-white shadow-md">
                 <i class="fa-solid fa-venus-mars text-xl"></i>
               </div>
@@ -280,62 +291,215 @@
       </section>
 
       <!-- ============ CLIENT VOICES ============ -->
-      <section id="reviews" class="py-20 sm:py-24">
-        <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-          <div class="mb-10 max-w-2xl" data-gsap="fade-up">
-            <p class="mb-3 text-xs font-extrabold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-sm">
-              <i class="fa-solid fa-comment-dots mr-2 animate-pulse"></i>Client voices
+    <section id="testimonials" class="py-20 sm:py-24">
+      <div class="section-wrap">
+
+        <div class="mb-12 flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+  
+  <!-- Left Side: Title -->
+  <div class="max-w-[45rem]">
+    <!-- Fixed the flex direction here -->
+    <div data-anim="fade-up" class="inline-flex items-center gap-2">
+      <span class="h-2 w-2 rounded-full bg-amberpurple-rich"></span>
+      <span class="text-[11px] font-bold uppercase tracking-[0.24em] text-amberpurple-rich">Testimonials</span>
+    </div>
+    
+    <h2 data-anim="split-words" class="mt-4 font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl lg:text-6xl">
+      What clients love about the Amber experience.
+    </h2>
+  </div>
+
+  <!-- Right Side: Google Reviews Link -->
+  <a href="https://www.google.com/maps/place/Amber+salon+by+Heer/@23.0527461,72.5303017,17z/data=!3m1!5s0x395e84a6091f5dc7:0x1316d121ab94c496!4m8!3m7!1s0x395e85f892fa2bd3:0x5d6c7a0e653f5e20!8m2!3d23.0527461!4d72.5328766!9m1!1b1!16s%2Fg%2F11v1b4724g?entry=ttu&g_ep=EgoyMDI2MTExMC4wIKXMDSoASAFQAw%3D%3D" 
+     target="_blank" rel="noopener noreferrer"
+     data-anim="fade-up"
+     class="group inline-flex shrink-0 items-center gap-2 rounded-full border border-amberpurple-deep/20 bg-white/70 px-6 py-3 text-xs font-bold uppercase tracking-[0.18em] text-amberpurple-deep backdrop-blur transition hover:border-amberpurple-rich/40 hover:bg-white sm:mb-2">
+    Read More Reviews
+    <i class="fi fi-rr-arrow-small-right text-base leading-none transition-transform duration-300 group-hover:translate-x-1"></i>
+  </a>
+
+</div>
+        <div class="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+
+          <article data-anim="fade-up" class="group relative rounded-2xl border border-amberpurple-soft/40 bg-white/60 p-8 backdrop-blur transition duration-500 hover:-translate-y-1 hover:border-amberpurple-rich/30 hover:shadow-glow">
+            <i class="fi fi-rr-quote-right absolute right-6 top-6 text-3xl leading-none text-amberpurple-soft transition group-hover:text-amberpurple-rich/50"></i>
+            <div class="flex items-center gap-0.5 text-[#d49b28]">
+              <i class="fi fi-sr-star text-sm leading-none"></i>
+              <i class="fi fi-sr-star text-sm leading-none"></i>
+              <i class="fi fi-sr-star text-sm leading-none"></i>
+              <i class="fi fi-sr-star text-sm leading-none"></i>
+              <i class="fi fi-sr-star text-sm leading-none"></i>
+            </div>
+            <p class="mt-5 text-base leading-8 text-amberpurple-deep/75">
+              Heer understood exactly the kind of elegant look I wanted. My makeup stayed flawless,
+              and the whole experience felt calm, premium, and beautifully managed.
             </p>
-            <h2 class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl">
-              Real ratings from the people who matter most.
-            </h2>
-          </div>
-
-          <div class="grid gap-6 md:grid-cols-3">
-            <!-- Shehnaz -->
-            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
-              <div class="flex items-center gap-1 text-amberpurple-rich">
-                <i class="fa-solid fa-star"></i>
-                <span class="text-sm font-bold">10/10</span>
+            <div class="mt-6 flex items-center gap-3">
+              <span class="grid h-11 w-11 place-items-center rounded-full bg-amberpurple-rich font-display text-lg text-white">R</span>
+              <div>
+                <strong class="block text-sm text-amberpurple-deep">Riya S.</strong>
+                <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-amberpurple-rich">Bridal Client</span>
               </div>
-              <p class="mt-5 text-base leading-8 text-amberpurple-deep/70">
-                "Shehnaz rated her experience 10/10 — a perfect score for service, finish, and overall care."
-              </p>
-              <p class="mt-4 text-sm font-bold text-amberpurple-deep">
-                <i class="fa-solid fa-user-circle mr-1.5 text-amberpurple-rich"></i>Shehnaz
-              </p>
             </div>
+          </article>
 
-            <!-- Riya -->
-            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
-              <div class="flex items-center gap-1 text-amberpurple-rich">
-                <i class="fa-solid fa-star"></i>
-                <span class="text-sm font-bold">9/10</span>
-              </div>
-              <p class="mt-5 text-base leading-8 text-amberpurple-deep/70">
-                "Riya gave a 9/10, highlighting the salon's consistent quality and welcoming atmosphere."
-              </p>
-              <p class="mt-4 text-sm font-bold text-amberpurple-deep">
-                <i class="fa-solid fa-user-circle mr-1.5 text-amberpurple-rich"></i>Riya
-              </p>
+          <article data-anim="fade-up" class="group relative rounded-2xl border border-amberpurple-soft/40 bg-white/60 p-8 backdrop-blur transition duration-500 hover:-translate-y-1 hover:border-amberpurple-rich/30 hover:shadow-glow">
+            <i class="fi fi-rr-quote-right absolute right-6 top-6 text-3xl leading-none text-amberpurple-soft transition group-hover:text-amberpurple-rich/50"></i>
+            <div class="flex items-center gap-0.5 text-[#d49b28]">
+              <i class="fi fi-sr-star text-sm leading-none"></i>
+              <i class="fi fi-sr-star text-sm leading-none"></i>
+              <i class="fi fi-sr-star text-sm leading-none"></i>
+              <i class="fi fi-sr-star text-sm leading-none"></i>
+              <i class="fi fi-sr-star text-sm leading-none"></i>
             </div>
+            <p class="mt-5 text-base leading-8 text-amberpurple-deep/75">
+              The salon feels luxurious without being overwhelming. My hair styling and facial were
+              both done with so much attention to detail and comfort.
+            </p>
+            <div class="mt-6 flex items-center gap-3">
+              <span class="grid h-11 w-11 place-items-center rounded-full bg-amberpurple-rich font-display text-lg text-white">N</span>
+              <div>
+                <strong class="block text-sm text-amberpurple-deep">Neha P.</strong>
+                <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-amberpurple-rich">Regular Client</span>
+              </div>
+            </div>
+          </article>
 
-            <!-- Pinal -->
-            <div data-gsap="stagger-card" class="rounded-2xl bg-white p-7 shadow-lg ring-1 ring-amberpurple-deep/5 transition duration-300 hover:-translate-y-1 hover:shadow-glow">
-              <div class="flex items-center gap-1 text-amberpurple-rich">
-                <i class="fa-solid fa-star"></i>
-                <span class="text-sm font-bold">9/10</span>
-              </div>
-              <p class="mt-5 text-base leading-8 text-amberpurple-deep/70">
-                "Pinal scored the salon 9/10, praising the value and professionalism of the team."
-              </p>
-              <p class="mt-4 text-sm font-bold text-amberpurple-deep">
-                <i class="fa-solid fa-user-circle mr-1.5 text-amberpurple-rich"></i>Pinal
-              </p>
+          <article data-anim="fade-up" class="group relative rounded-2xl border border-amberpurple-soft/40 bg-white/60 p-8 backdrop-blur transition duration-500 hover:-translate-y-1 hover:border-amberpurple-rich/30 hover:shadow-glow">
+            <i class="fi fi-rr-quote-right absolute right-6 top-6 text-3xl leading-none text-amberpurple-soft transition group-hover:text-amberpurple-rich/50"></i>
+            <div class="flex items-center gap-0.5 text-[#d49b28]">
+              <i class="fi fi-sr-star text-sm leading-none"></i>
+              <i class="fi fi-sr-star text-sm leading-none"></i>
+              <i class="fi fi-sr-star text-sm leading-none"></i>
+              <i class="fi fi-sr-star text-sm leading-none"></i>
+              <i class="fi fi-sr-star text-sm leading-none"></i>
             </div>
-          </div>
+            <p class="mt-5 text-base leading-8 text-amberpurple-deep/75">
+              From hygiene to product quality, everything was impressive. The team made me feel
+              looked after, and the final look was soft, graceful, and camera-ready.
+            </p>
+            <div class="mt-6 flex items-center gap-3">
+              <span class="grid h-11 w-11 place-items-center rounded-full bg-amberpurple-rich font-display text-lg text-white">K</span>
+              <div>
+                <strong class="block text-sm text-amberpurple-deep">Kashish M.</strong>
+                <span class="text-[10px] font-bold uppercase tracking-[0.18em] text-amberpurple-rich">Event Client</span>
+              </div>
+            </div>
+          </article>
+
+          
+
         </div>
-      </section>
+      </div>
+    </section>
+
+
+    <section id="faq" class="py-16 sm:py-20">
+  <div class="section-wrap">
+    <div class="grid gap-12 lg:grid-cols-2 lg:gap-16">
+
+      <!-- Left Column: Title & CTA -->
+      <div class="reveal lg:sticky lg:top-28 lg:self-start">
+        <div class="inline-flex items-center gap-2">
+          <span class="h-2 w-2 rounded-full bg-amberpurple-rich"></span>
+          <span class="text-[11px] font-bold uppercase tracking-[0.24em] text-amberpurple-rich">About Us FAQ</span>
+        </div>
+
+        <h2 class="mt-4 font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl">
+          Questions about our story and philosophy.
+        </h2>
+
+        <p class="mt-5 text-sm leading-7 text-amberpurple-deep/70 sm:text-base">
+          Get to know the team, our hygiene standards, and the vision behind Amber Salon. If you have any other questions, we're just a message away.
+        </p>
+
+        <div class="flex flex-wrap gap-3 mt-6">
+          <a class="magnetic group inline-flex items-center gap-2 rounded-full bg-amberpurple-deep px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-white transition hover:bg-amberpurple-rich hover:shadow-glow"
+            href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20have%20a%20question."
+            target="_blank" rel="noreferrer">
+            <i class="fi fi-brands-whatsapp text-sm leading-none"></i>
+            Chat With Us
+          </a>
+          <a class="group inline-flex items-center gap-2 rounded-full border border-white/30 bg-amberpurple-deep px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-white backdrop-blur transition hover:border-white/50 hover:bg-white/15"
+            href="tel:+919512517604">
+            <i class="fi fi-rr-phone-call text-sm leading-none"></i>
+            Call Now
+          </a>
+        </div>
+      </div>
+
+      <!-- Right Column: Accordion -->
+      <div class="reveal grid gap-3">
+
+        <!-- Q1 -->
+        <details class="group overflow-hidden rounded-2xl border border-amberpurple-soft/40 bg-white/60 backdrop-blur open:bg-white open:shadow-md transition-all duration-300">
+          <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 text-left text-amberpurple-deep sm:px-7">
+            <span class="text-base font-semibold sm:text-[1.05rem]">Who is the founder behind Amber Salon?</span>
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich transition duration-300 group-open:rotate-180 group-open:bg-amberpurple-rich group-open:text-white">
+              <i class="fi fi-rr-angle-small-down text-lg leading-none"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 text-sm leading-7 text-amberpurple-deep/75 sm:px-7 sm:text-base sm:leading-8">
+            Amber Salon is founded by Heer Raval. Her vision was to create a premium, calming space where modern beauty expertise meets quiet luxury, ensuring every client feels seen, cared for, and confident.
+          </div>
+        </details>
+
+        <!-- Q2 -->
+        <details class="group overflow-hidden rounded-2xl border border-amberpurple-soft/40 bg-white/60 backdrop-blur open:bg-white open:shadow-md transition-all duration-300">
+          <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 text-left text-amberpurple-deep sm:px-7">
+            <span class="text-base font-semibold sm:text-[1.05rem]">What makes Amber Salon different from other salons?</span>
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich transition duration-300 group-open:rotate-180 group-open:bg-amberpurple-rich group-open:text-white">
+              <i class="fi fi-rr-angle-small-down text-lg leading-none"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 text-sm leading-7 text-amberpurple-deep/75 sm:px-7 sm:text-base sm:leading-8">
+            We focus heavily on personalized consultations. Instead of a rushed, one-size-fits-all approach, we take the time to understand your hair type, skin concerns, and personal style to deliver a highly tailored, premium experience.
+          </div>
+        </details>
+
+        <!-- Q3 -->
+        <details class="group overflow-hidden rounded-2xl border border-amberpurple-soft/40 bg-white/60 backdrop-blur open:bg-white open:shadow-md transition-all duration-300">
+          <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 text-left text-amberpurple-deep sm:px-7">
+            <span class="text-base font-semibold sm:text-[1.05rem]">Do you maintain strict hygiene standards?</span>
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich transition duration-300 group-open:rotate-180 group-open:bg-amberpurple-rich group-open:text-white">
+              <i class="fi fi-rr-angle-small-down text-lg leading-none"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 text-sm leading-7 text-amberpurple-deep/75 sm:px-7 sm:text-base sm:leading-8">
+            Absolutely. Hygiene is a top priority at Amber Salon. We use sanitized tools, maintain clean stations, and ensure careful preparation for every single appointment to guarantee your safety and comfort.
+          </div>
+        </details>
+
+        <!-- Q4 -->
+        <details class="group overflow-hidden rounded-2xl border border-amberpurple-soft/40 bg-white/60 backdrop-blur open:bg-white open:shadow-md transition-all duration-300">
+          <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 text-left text-amberpurple-deep sm:px-7">
+            <span class="text-base font-semibold sm:text-[1.05rem]">Is Amber Salon a unisex salon?</span>
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich transition duration-300 group-open:rotate-180 group-open:bg-amberpurple-rich group-open:text-white">
+              <i class="fi fi-rr-angle-small-down text-lg leading-none"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 text-sm leading-7 text-amberpurple-deep/75 sm:px-7 sm:text-base sm:leading-8">
+            Yes, we are a premium unisex salon. We offer a full range of specialized services for both men and women, including hair styling, advanced skin care, grooming, and makeup.
+          </div>
+        </details>
+
+        <!-- Q5 -->
+        <details class="group overflow-hidden rounded-2xl border border-amberpurple-soft/40 bg-white/60 backdrop-blur open:bg-white open:shadow-md transition-all duration-300">
+          <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 text-left text-amberpurple-deep sm:px-7">
+            <span class="text-base font-semibold sm:text-[1.05rem]">What is your core beauty philosophy?</span>
+            <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich transition duration-300 group-open:rotate-180 group-open:bg-amberpurple-rich group-open:text-white">
+              <i class="fi fi-rr-angle-small-down text-lg leading-none"></i>
+            </span>
+          </summary>
+          <div class="px-6 pb-6 text-sm leading-7 text-amberpurple-deep/75 sm:px-7 sm:text-base sm:leading-8">
+            We believe beauty should enhance who you already are — not hide it. Our goal is to highlight your natural features using premium products and expert techniques, ensuring you leave feeling like the best version of yourself.
+          </div>
+        </details>
+
+      </div>
+    </div>
+  </div>
+</section>
 
       <!-- ============ CTA ============ -->
      <section id="contact-cta" class="py-20 sm:py-24">
@@ -376,6 +540,8 @@
         </div>
       </div>
     </section>
+
+    
 
     </main>
 
