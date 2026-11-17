@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Services | Amber Salon by Heer</title>
+    <meta name="description"
+        content="Explore the premium hair, skin, nails, makeup, and grooming services offered at Amber Salon by Heer." />
+
+    <!-- Your existing stylesheet -->
+    <link rel="stylesheet" href="./dist/styles.css" />
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+    <!-- GSAP for Animations -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+
+<body class="site-shell overflow-x-hidden">
+    <div id="navbar"></div>
+
+    <main>
+      <nav aria-label="Breadcrumb" class="bg-amberpurple-ivory/80">
+        <div class="section-wrap flex items-center gap-2 py-3 text-sm text-amberpurple-deep/70">
+          <a href="./index.html" class="flex items-center gap-1 transition hover:text-amberpurple-deep">
+            <i class="fa-solid fa-house mr-2"></i> Home
+          </a>
+          <span class="text-amberpurple-deep/40">/</span>
+          <span>Menu</span>
+        </div>
+      </nav>
+        <!-- Hero -->
+        <section class="bg-hero-radial py-24 sm:py-28 relative overflow-hidden">
+            <div class="section-wrap">
+                <div class="mx-auto max-w-4xl text-center">
+                    <p data-hero-sub
+                        class="mb-4 text-xs font-extrabold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-sm">
+                        Our Expertise
+                    </p>
+                    <h1 data-hero-title
+                        class="font-display text-5xl leading-[0.92] tracking-[-0.03em] text-amberpurple-deep sm:text-6xl lg:text-7xl">
+                        Premium Services
+                    </h1>
+                    <p data-hero-text
+                        class="mx-auto mt-6 max-w-2xl text-base leading-8 text-amberpurple-deep/74 sm:text-lg sm:leading-9">
+                        Browse our comprehensive range of premium beauty services. Every treatment is crafted with
+                        precision, care, and luxury to enhance your natural beauty.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Grid -->
+        <section class="py-20 sm:py-24">
+            <div class="section-wrap">
+                <div data-reveal-text class="mb-12 text-center max-w-[44rem] mx-auto">
+                    <p class="mb-4 text-xs font-extrabold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-sm">
+                        Signature Treatments
+                    </p>
+                    <h2
+                        class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl lg:text-6xl">
+                        Explore our services.
+                    </h2>
+                </div>
+
+                <!-- Uniform Editorial Grid with Hover Overlays -->
+                <div class="grid gap-6 sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-2 md:grid-cols-2">
+
+                    <!-- 1. Hair Styling -->
+                    <a href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20Hair%20Styling." target="_blank" rel="noreferrer" data-animate class=" relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/m1.jpg" alt="Hair Styling" class="aspect-[16/9] w-full object-cover transition duration-500 " />
+                            
+                        </div>
+                    </a>
+
+                    <!-- 2. Hair Spa -->
+                    <a href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20Hair%20Spa." target="_blank" rel="noreferrer" data-animate class=" relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/m2.jpg" alt="Hair Spa" class="aspect-[16/9] w-full object-cover transition duration-500 " />
+                            
+                        </div>
+                    </a>
+
+                    <!-- 3. Facial -->
+                    <a href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20a%20Facial." target="_blank" rel="noreferrer" data-animate class=" relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/m3.jpg" alt="Facial" class="aspect-[16/9] w-full object-cover transition duration-500 " />
+                            
+                        </div>
+                    </a>
+
+                    <!-- 4. Bridal Makeup -->
+                    <a href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20Bridal%20Makeup." target="_blank" rel="noreferrer" data-animate class=" relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/m4.jpg" alt="Bridal Makeup" class="aspect-[16/9] w-full object-cover transition duration-500 " />
+
+                        </div>
+                    </a>
+
+                    <!-- 5. Nail Art -->
+                    <a href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20Nail%20Art." target="_blank" rel="noreferrer" data-animate class=" relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/m5.jpg" alt="Nail Art" class="aspect-[16/9] w-full object-cover transition duration-500 " />
+                            
+                        </div>
+                    </a>
+
+                    <!-- 6. Skin Care -->
+                    <a href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20Skin%20Care." target="_blank" rel="noreferrer" data-animate class=" relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/m6.jpg" alt="Skin Care" class="aspect-[16/9] w-full object-cover transition duration-500 " />
+                           
+                        </div>
+                    </a>
+
+                    <!-- 7. Hair Color -->
+                    <a href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20Hair%20Color." target="_blank" rel="noreferrer" data-animate class=" relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/m7.jpg" alt="Hair Color" class="aspect-[16/9] w-full object-cover transition duration-500 " />
+                           
+                        </div>
+                    </a>
+
+                    <!-- 8. Waxing -->
+                    <a href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20Waxing." target="_blank" rel="noreferrer" data-animate class=" relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/m8.jpg " alt="Waxing" class="aspect-[16/9] w-full object-cover transition duration-500 " />
+                            
+                        </div>
+                    </a>
+
+                    <!-- 9. Threading -->
+                    <a href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20Threading." target="_blank" rel="noreferrer" data-animate class=" relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/m9.jpg " alt="Threading" class="aspect-[16/9] w-full object-cover transition duration-500 " />
+                            
+                        </div>
+                    </a>
+
+                    <!-- 10. Manicure & Pedicure -->
+                    <a href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20Manicure%20and%20Pedicure." target="_blank" rel="noreferrer" data-animate class=" relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/m10.jpg" alt="Manicure and Pedicure" class="aspect-[16/9] w-full object-cover transition duration-500 " />
+                            
+                        </div>
+                    </a>
+
+                    <!-- 11. Keratin & Botox -->
+                    <a href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20Keratin%20Treatment." target="_blank" rel="noreferrer" data-animate class=" relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/m11.jpg" alt="Keratin and Botox" class="aspect-[16/9] w-full object-cover transition duration-500 " />
+                            
+                        </div>
+                    </a>
+
+                    <!-- 12. Party Makeup -->
+                    <a href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20Party%20Makeup." target="_blank" rel="noreferrer" data-animate class=" relative overflow-hidden rounded-2xl transition duration-300 hover:-translate-y-1 hover:shadow-glow block">
+                        <div class="relative w-full h-full overflow-hidden rounded-xl">
+                            <img src="./assets/m12.jpg" alt="Party Makeup" class="aspect-[16/9] w-full object-cover transition duration-500 " />
+                           
+                        </div>
+                    </a>
+
+                
+
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section id="faq" class="py-16 sm:py-20">
+            <div class="section-wrap">
+                <div class="grid gap-12 lg:grid-cols-2 lg:gap-16">
+
+                    <!-- Left Column: Title & CTA -->
+                    <div class="reveal lg:sticky lg:top-28 lg:self-start">
+                        <div class="inline-flex items-center gap-2">
+                            <span class="h-2 w-2 rounded-full bg-amberpurple-rich"></span>
+                            <span class="text-[11px] font-bold uppercase tracking-[0.24em] text-amberpurple-rich">Services FAQ</span>
+                        </div>
+
+                        <h2 class="mt-4 font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl">
+                            Common questions about our services.
+                        </h2>
+
+                        <p class="mt-5 text-sm leading-7 text-amberpurple-deep/70 sm:text-base">
+                            Want to know more about a specific treatment? Message us on WhatsApp to discuss your goals and we will recommend the perfect service for you.
+                        </p>
+
+                        <div class="flex flex-wrap gap-3 mt-6">
+                            <a class="magnetic group inline-flex items-center gap-2 rounded-full bg-amberpurple-deep px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-white transition hover:bg-amberpurple-rich hover:shadow-glow"
+                                href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20have%20a%20question%20about%20your%20services."
+                                target="_blank" rel="noreferrer">
+                                <i class="fi fi-brands-whatsapp text-sm leading-none"></i>
+                                Ask a Question
+                            </a>
+                            <a class="group inline-flex items-center gap-2 rounded-full border border-white/30 bg-amberpurple-deep px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-white backdrop-blur transition hover:border-white/50 hover:bg-white/15"
+                                href="tel:+919512517604">
+                                <i class="fi fi-rr-phone-call text-sm leading-none"></i>
+                                Call Now
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: Accordion -->
+                    <div class="reveal grid gap-3">
+
+                        <!-- Q1 -->
+                        <details class="group overflow-hidden rounded-2xl border border-amberpurple-soft/40 bg-white/60 backdrop-blur open:bg-white open:shadow-md transition-all duration-300">
+                            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 text-left text-amberpurple-deep sm:px-7">
+                                <span class="text-base font-semibold sm:text-[1.05rem]">Do I need to book in advance for bridal services?</span>
+                                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich transition duration-300 group-open:rotate-180 group-open:bg-amberpurple-rich group-open:text-white">
+                                    <i class="fi fi-rr-angle-small-down text-lg leading-none"></i>
+                                </span>
+                            </summary>
+                            <div class="px-6 pb-6 text-sm leading-7 text-amberpurple-deep/75 sm:px-7 sm:text-base sm:leading-8">
+                                Yes. Bridal bookings are best reserved well in advance so trials, timings and look planning can be coordinated properly.
+                            </div>
+                        </details>
+
+                        <!-- Q2 -->
+                        <details class="group overflow-hidden rounded-2xl border border-amberpurple-soft/40 bg-white/60 backdrop-blur open:bg-white open:shadow-md transition-all duration-300">
+                            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 text-left text-amberpurple-deep sm:px-7">
+                                <span class="text-base font-semibold sm:text-[1.05rem]">Can I book appointments directly on WhatsApp?</span>
+                                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich transition duration-300 group-open:rotate-180 group-open:bg-amberpurple-rich group-open:text-white">
+                                    <i class="fi fi-rr-angle-small-down text-lg leading-none"></i>
+                                </span>
+                            </summary>
+                            <div class="px-6 pb-6 text-sm leading-7 text-amberpurple-deep/75 sm:px-7 sm:text-base sm:leading-8">
+                                Yes. All appointment buttons on this page open WhatsApp with a ready message so you can confirm your preferred service quickly.
+                            </div>
+                        </details>
+
+                        <!-- Q3 -->
+                        <details class="group overflow-hidden rounded-2xl border border-amberpurple-soft/40 bg-white/60 backdrop-blur open:bg-white open:shadow-md transition-all duration-300">
+                            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 text-left text-amberpurple-deep sm:px-7">
+                                <span class="text-base font-semibold sm:text-[1.05rem]">Do you offer customized skin and hair consultations?</span>
+                                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich transition duration-300 group-open:rotate-180 group-open:bg-amberpurple-rich group-open:text-white">
+                                    <i class="fi fi-rr-angle-small-down text-lg leading-none"></i>
+                                </span>
+                            </summary>
+                            <div class="px-6 pb-6 text-sm leading-7 text-amberpurple-deep/75 sm:px-7 sm:text-base sm:leading-8">
+                                Yes. Recommendations are adjusted to your concerns, occasion, style preferences and the kind of finish you want.
+                            </div>
+                        </details>
+
+                        <!-- Q4 -->
+                        <details class="group overflow-hidden rounded-2xl border border-amberpurple-soft/40 bg-white/60 backdrop-blur open:bg-white open:shadow-md transition-all duration-300">
+                            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 text-left text-amberpurple-deep sm:px-7">
+                                <span class="text-base font-semibold sm:text-[1.05rem]">What should I do before my salon visit?</span>
+                                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich transition duration-300 group-open:rotate-180 group-open:bg-amberpurple-rich group-open:text-white">
+                                    <i class="fi fi-rr-angle-small-down text-lg leading-none"></i>
+                                </span>
+                            </summary>
+                            <div class="px-6 pb-6 text-sm leading-7 text-amberpurple-deep/75 sm:px-7 sm:text-base sm:leading-8">
+                                Share references, skin sensitivities or event details while booking so the team can prepare the best approach for your appointment.
+                            </div>
+                        </details>
+
+                        <!-- Q5 -->
+                        <details class="group overflow-hidden rounded-2xl border border-amberpurple-soft/40 bg-white/60 backdrop-blur open:bg-white open:shadow-md transition-all duration-300">
+                            <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 text-left text-amberpurple-deep sm:px-7">
+                                <span class="text-base font-semibold sm:text-[1.05rem]">Are the products suitable for sensitive skin?</span>
+                                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich transition duration-300 group-open:rotate-180 group-open:bg-amberpurple-rich group-open:text-white">
+                                    <i class="fi fi-rr-angle-small-down text-lg leading-none"></i>
+                                </span>
+                            </summary>
+                            <div class="px-6 pb-6 text-sm leading-7 text-amberpurple-deep/75 sm:px-7 sm:text-base sm:leading-8">
+                                Product choices are made carefully, and you can mention sensitivities during booking so alternatives and patch-friendly options can be discussed.
+                            </div>
+                        </details>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section id="contact-cta" class="py-20 sm:py-24">
+            <div class="section-wrap">
+                <div data-anim="fade-up"
+                    class="relative overflow-hidden rounded-[2rem] bg-silk-gradient px-7 py-12 text-white shadow-velvet sm:px-10 sm:py-16">
+
+                    <div class="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-amberpurple-soft/25 blur-2xl"></div>
+                    <div class="pointer-events-none absolute -bottom-20 -left-10 h-72 w-72 rounded-full bg-amberpurple-soft/15 blur-3xl"></div>
+                    <i class="fi fi-rr-sparkles pointer-events-none absolute right-10 top-10 text-6xl leading-none text-white/10"></i>
+
+                    <div class="relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+                        <div class="max-w-3xl">
+                            <p class="mb-4 text-[11px] font-bold uppercase tracking-[0.3em] text-white/70">Premium Booking</p>
+                            <h2 class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-white sm:text-5xl lg:text-6xl">
+                                Book Your Beauty Appointment Today
+                            </h2>
+                            <p class="mt-5 max-w-2xl text-base leading-8 text-white/80 sm:text-lg sm:leading-9">
+                                Reserve your session for hair, skin, makeup or bridal services and experience beauty
+                                care designed with comfort, quality and elegance in mind.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-3">
+                            <a class="magnetic group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-amberpurple-deep transition hover:bg-amberpurple-ivory hover:shadow-glow"
+                                href="https://wa.me/9512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20an%20appointment."
+                                target="_blank" rel="noreferrer">
+                                <i class="fi fi-rr-calendar-check text-sm leading-none"></i>
+                                Book Appointment
+                            </a>
+                            <a class="group inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-white backdrop-blur transition hover:border-white/50 hover:bg-white/15"
+                                href="tel:+9512517604">
+                                <i class="fi fi-rr-phone-call text-sm leading-none"></i>
+                                Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <div id="footer"></div>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/9512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20an%20appointment."
+        target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"
+        class="group fixed bottom-6 right-6 z-40 grid h-[3.75rem] w-[3.75rem] place-items-center rounded-full bg-[#25D366] text-white shadow-[0_20px_42px_rgba(37,211,102,0.34)] transition-all duration-300 hover:-translate-y-2 hover:scale-110">
+        <i class="fa-brands fa-whatsapp text-3xl transition-transform duration-300 group-hover:animate-pulse"></i>
+    </a>
+
+    <!-- Back to Top -->
+    <button type="button" data-back-to-top aria-label="Back to top"
+        class="pointer-events-none fixed bottom-24 right-6 z-40 grid h-12 w-12 translate-y-4 place-items-center rounded-full border border-amberpurple-deep/10 bg-white/90 text-amberpurple-deep opacity-0 shadow-velvet transition hover:bg-white hover:-translate-y-1">
+        <i class="fa-solid fa-arrow-up text-lg transition-transform duration-300"></i>
+    </button>
+
+    <script src="./assets/js/layout.js"></script>
+</body>
+
+</html>

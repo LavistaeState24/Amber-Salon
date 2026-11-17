@@ -8,17 +8,42 @@
   <meta name="description"
     content="Explore premium bridal, party, hair, skin, and monthly self-care packages at Amber Salon by Heer." />
   <link rel="stylesheet" href="./dist/styles.css" />
+  <!-- Flaticon icons -->
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css">
+  <style>
+    /* Scroll reveal fallback */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+    .reveal.is-visible { opacity: 1; transform: translateY(0); }
+    
+    /* Hide default marker for details element */
+    details > summary::-webkit-details-marker { display: none; }
+  </style>
 </head>
 
 <body class="site-shell overflow-x-hidden">
   <div id="navbar"></div>
 
-  <main>
+  <main class="overflow-x-hidden">
+    <nav aria-label="Breadcrumb" class="bg-amberpurple-ivory/80">
+        <div class="section-wrap flex items-center gap-2 py-3 text-sm text-amberpurple-deep/70">
+          <a href="./index.html" class="flex items-center gap-1 transition hover:text-amberpurple-deep">
+            <i class="fa-solid fa-house mr-2"></i> Home
+          </a>
+          <span class="text-amberpurple-deep/40">/</span>
+          <span>Packages</span>
+        </div>
+      </nav>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         HERO — Occasion-ready packages
+    ═══════════════════════════════════════════════════════════ -->
     <section class="section-wrap grid min-h-[calc(100vh-5.25rem)] items-center py-10 sm:py-14 lg:py-16">
       <div class="grid items-center gap-10 lg:grid-cols-[0.95fr_1.05fr]">
         <div class="reveal">
           <p class="mb-4 text-xs font-extrabold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-sm">
-            Salon packages
+            Salon Packages
           </p>
           <h1
             class="max-w-4xl font-display text-[3.2rem] leading-[0.9] tracking-[-0.04em] text-amberpurple-deep sm:text-[4.6rem] lg:text-[6.1rem]">
@@ -40,7 +65,7 @@
 
           <div class="mt-10 grid gap-3 sm:grid-cols-3">
             <div class="rounded-xl border border-amberpurple-deep/10 bg-white/85 p-4 shadow-[0_16px_45px_rgba(49,18,75,0.08)]">
-              <span class="block text-xl font-extrabold text-amberpurple-deep">6</span>
+              <span class="block text-xl font-extrabold text-amberpurple-deep">6+</span>
               <span class="mt-1 block text-[0.68rem] font-extrabold uppercase tracking-[0.18em] text-amberpurple-rich">
                 Curated options
               </span>
@@ -88,6 +113,9 @@
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════════════════════
+         SIGNATURE PACKAGES
+    ═══════════════════════════════════════════════════════════ -->
     <section id="packages-list" class="py-16 sm:py-20">
       <div class="section-wrap">
         <div class="reveal mb-10 flex flex-col justify-between gap-5 lg:flex-row lg:items-end">
@@ -106,6 +134,7 @@
         </div>
 
         <div class="grid gap-5 lg:grid-cols-3">
+          <!-- Bridal Glow -->
           <article
             class="reveal flex min-h-full flex-col overflow-hidden rounded-xl border border-amberpurple-deep/10 bg-white shadow-[0_22px_70px_rgba(49,18,75,0.1)]">
             <img class="aspect-[16/10] w-full object-cover"
@@ -137,6 +166,7 @@
             </div>
           </article>
 
+          <!-- Party Glam (Most popular) -->
           <article
             class="reveal flex min-h-full flex-col overflow-hidden rounded-xl bg-silk-gradient text-white shadow-velvet">
             <img class="aspect-[16/10] w-full object-cover opacity-90"
@@ -168,6 +198,7 @@
             </div>
           </article>
 
+          <!-- Hair Revival -->
           <article
             class="reveal flex min-h-full flex-col overflow-hidden rounded-xl border border-amberpurple-deep/10 bg-white shadow-[0_22px_70px_rgba(49,18,75,0.1)]">
             <img class="aspect-[16/10] w-full object-cover"
@@ -194,6 +225,7 @@
             </div>
           </article>
 
+          <!-- Skin Glow -->
           <article
             class="reveal flex min-h-full flex-col rounded-xl border border-amberpurple-deep/10 bg-white p-6 shadow-[0_22px_70px_rgba(49,18,75,0.1)]">
             <p class="text-[0.68rem] font-extrabold uppercase tracking-[0.22em] text-[#7f4f24]">Skin care</p>
@@ -216,6 +248,7 @@
             </div>
           </article>
 
+          <!-- Self-Care -->
           <article
             class="reveal flex min-h-full flex-col rounded-xl border border-amberpurple-deep/10 bg-white p-6 shadow-[0_22px_70px_rgba(49,18,75,0.1)]">
             <p class="text-[0.68rem] font-extrabold uppercase tracking-[0.22em] text-amberpurple-rich">Monthly care</p>
@@ -238,6 +271,7 @@
             </div>
           </article>
 
+          <!-- Event Ready -->
           <article
             class="reveal flex min-h-full flex-col rounded-xl border border-amberpurple-deep/10 bg-white p-6 shadow-[0_22px_70px_rgba(49,18,75,0.1)]">
             <p class="text-[0.68rem] font-extrabold uppercase tracking-[0.22em] text-[#7f4f24]">Complete look</p>
@@ -263,45 +297,160 @@
       </div>
     </section>
 
+    <!-- ═══════════════════════════════════════════════════════════
+         MEMBERSHIP NOTE / TERMS (from PDF)
+    ═══════════════════════════════════════════════════════════ -->
     <section class="py-14 sm:py-20">
       <div class="section-wrap">
         <div class="reveal grid overflow-hidden rounded-xl bg-white shadow-velvet lg:grid-cols-[0.85fr_1.15fr]">
           <div class="bg-white p-7 sm:p-10">
-            <p class="text-xs font-extrabold uppercase tracking-[0.26em] text-amberpurple-deep">How to choose</p>
+            <p class="text-xs font-extrabold uppercase tracking-[0.26em] text-amberpurple-deep">Good to know</p>
             <h2 class="mt-4 font-display text-4xl leading-[0.96] text-amberpurple-deep sm:text-5xl">
-              Match the package to your day.
+              Membership & booking terms.
             </h2>
             <p class="mt-5 text-sm leading-7 text-amberpurple-deep/70">
-              Share your event type, outfit, hair length, skin goals, and timeline. The team can suggest the right
-              package or adjust one with add-ons.
+              Members save up to 20% on regular services. Makeup services are excluded from membership discounts.
             </p>
           </div>
-          <div class="grid divide-y divide-amberpurple-deep/10 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
+          <div class="grid divide-y divide-amberpurple-deep/10 sm:grid-cols-2 sm:divide-x sm:divide-y-0">
             <div class="p-7">
-              <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-amberpurple-rich">Wedding</p>
-              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">Choose Bridal Glow for a full finish and
-                coordinated prep.</p>
+              <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-amberpurple-rich">Deposit</p>
+              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">Rs. 5,000 deposit required at booking for makeup. Non-refundable and non-transferable.</p>
             </div>
             <div class="p-7">
-              <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-amberpurple-rich">Celebration</p>
-              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">Choose Party Glam or Event Ready for a polished
-                occasion look.</p>
+              <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-amberpurple-rich">Venue</p>
+              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">Venue charges start from Rs. 3,000. A personal room is required for the bride and makeup team.</p>
             </div>
             <div class="p-7">
-              <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-amberpurple-rich">Refresh</p>
-              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">Choose Hair Revival, Skin Glow, or Self-Care
-                for maintenance.</p>
+              <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-amberpurple-rich">Timing</p>
+              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">Clients must be ready at the exact time. Delays are not the team's responsibility.</p>
+            </div>
+            <div class="p-7">
+              <p class="text-sm font-extrabold uppercase tracking-[0.2em] text-amberpurple-rich">Accessories</p>
+              <p class="mt-3 text-sm leading-7 text-amberpurple-deep/70">Rs. 5,000 refundable deposit for accessories. Return within 24 hours to avoid Rs. 3,000/day charge.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-   <section id="contact-cta" class="py-20 sm:py-24">
+    <!-- ═══════════════════════════════════════════════════════════
+         FAQ — Two Column Layout
+    ═══════════════════════════════════════════════════════════ -->
+    <section id="faq" class="py-16 sm:py-20">
+      <div class="section-wrap">
+        <div class="grid gap-12 lg:grid-cols-2 lg:gap-16">
+
+          <!-- Left Column: Title & CTA -->
+          <div class="reveal lg:sticky lg:top-28 lg:self-start">
+            <div class="inline-flex items-center gap-2">
+              <span class="h-2 w-2 rounded-full bg-amberpurple-rich"></span>
+              <span class="text-[11px] font-bold uppercase tracking-[0.24em] text-amberpurple-rich">FAQ</span>
+            </div>
+
+            <h2 class="mt-4 font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl">
+              Common questions about our packages.
+            </h2>
+
+            <p class="mt-5 text-sm leading-7 text-amberpurple-deep/70 sm:text-base">
+              Something not covered here? Message us on WhatsApp and we'll help you pick the perfect package for your occasion.
+            </p>
+
+            <div class="flex flex-wrap gap-3 mt-6">
+              <a class="magnetic group inline-flex items-center gap-2 rounded-full bg-amberpurple-deep px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-white transition hover:bg-amberpurple-rich hover:shadow-glow"
+                href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20an%20appointment."
+                target="_blank" rel="noreferrer">
+                <i class="fi fi-rr-calendar-check text-sm leading-none"></i>
+                Book Appointment
+              </a>
+              <a class="group inline-flex items-center gap-2 rounded-full border border-white/30 bg-amberpurple-deep px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-white backdrop-blur transition hover:border-white/50 hover:bg-white/15"
+                href="tel:+919512517604">
+                <i class="fi fi-rr-phone-call text-sm leading-none"></i>
+                Call Now
+              </a>
+            </div>
+          </div>
+
+          <!-- Right Column: Accordion -->
+          <div class="reveal grid gap-3">
+
+            <!-- Q1 -->
+            <details class="group overflow-hidden rounded-2xl border border-amberpurple-soft/40 bg-white/60 backdrop-blur open:bg-white open:shadow-md transition-all duration-300">
+              <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 text-left text-amberpurple-deep sm:px-7">
+                <span class="text-base font-semibold sm:text-[1.05rem]">Do I need to book in advance for bridal or party packages?</span>
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich transition duration-300 group-open:rotate-180 group-open:bg-amberpurple-rich group-open:text-white">
+                  <i class="fi fi-rr-angle-small-down text-lg leading-none"></i>
+                </span>
+              </summary>
+              <div class="px-6 pb-6 text-sm leading-7 text-amberpurple-deep/75 sm:px-7 sm:text-base sm:leading-8">
+                Yes. Bridal and major event bookings are best reserved well in advance so trials, timings, and look planning can be coordinated properly.
+              </div>
+            </details>
+
+            <!-- Q2 -->
+            <details class="group overflow-hidden rounded-2xl border border-amberpurple-soft/40 bg-white/60 backdrop-blur open:bg-white open:shadow-md transition-all duration-300">
+              <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 text-left text-amberpurple-deep sm:px-7">
+                <span class="text-base font-semibold sm:text-[1.05rem]">Can I customize a package?</span>
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich transition duration-300 group-open:rotate-180 group-open:bg-amberpurple-rich group-open:text-white">
+                  <i class="fi fi-rr-angle-small-down text-lg leading-none"></i>
+                </span>
+              </summary>
+              <div class="px-6 pb-6 text-sm leading-7 text-amberpurple-deep/75 sm:px-7 sm:text-base sm:leading-8">
+                Absolutely. The packages listed are starting points. You can add specific services, upgrade to premium products, or combine packages based on your needs and budget.
+              </div>
+            </details>
+
+            <!-- Q3 -->
+            <details class="group overflow-hidden rounded-2xl border border-amberpurple-soft/40 bg-white/60 backdrop-blur open:bg-white open:shadow-md transition-all duration-300">
+              <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 text-left text-amberpurple-deep sm:px-7">
+                <span class="text-base font-semibold sm:text-[1.05rem]">Is the membership discount applicable to packages?</span>
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich transition duration-300 group-open:rotate-180 group-open:bg-amberpurple-rich group-open:text-white">
+                  <i class="fi fi-rr-angle-small-down text-lg leading-none"></i>
+                </span>
+              </summary>
+              <div class="px-6 pb-6 text-sm leading-7 text-amberpurple-deep/75 sm:px-7 sm:text-base sm:leading-8">
+                As per salon policy, membership discounts apply to regular hair and skin services. They are not applicable on makeup-based packages (Bridal Glow, Party Glam, Event Ready).
+              </div>
+            </details>
+
+            <!-- Q4 -->
+            <details class="group overflow-hidden rounded-2xl border border-amberpurple-soft/40 bg-white/60 backdrop-blur open:bg-white open:shadow-md transition-all duration-300">
+              <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 text-left text-amberpurple-deep sm:px-7">
+                <span class="text-base font-semibold sm:text-[1.05rem]">What is the cancellation policy for package bookings?</span>
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich transition duration-300 group-open:rotate-180 group-open:bg-amberpurple-rich group-open:text-white">
+                  <i class="fi fi-rr-angle-small-down text-lg leading-none"></i>
+                </span>
+              </summary>
+              <div class="px-6 pb-6 text-sm leading-7 text-amberpurple-deep/75 sm:px-7 sm:text-base sm:leading-8">
+                The Rs. 5,000 deposit for makeup bookings is strictly non-refundable and non-transferable. For other packages, we appreciate at least 24 hours' notice for cancellations or rescheduling.
+              </div>
+            </details>
+
+            <!-- Q5 -->
+            <details class="group overflow-hidden rounded-2xl border border-amberpurple-soft/40 bg-white/60 backdrop-blur open:bg-white open:shadow-md transition-all duration-300">
+              <summary class="flex w-full cursor-pointer list-none items-center justify-between gap-6 px-6 py-5 text-left text-amberpurple-deep sm:px-7">
+                <span class="text-base font-semibold sm:text-[1.05rem]">Do you offer trials for bridal makeup?</span>
+                <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-amberpurple-soft/45 text-amberpurple-rich transition duration-300 group-open:rotate-180 group-open:bg-amberpurple-rich group-open:text-white">
+                  <i class="fi fi-rr-angle-small-down text-lg leading-none"></i>
+                </span>
+              </summary>
+              <div class="px-6 pb-6 text-sm leading-7 text-amberpurple-deep/75 sm:px-7 sm:text-base sm:leading-8">
+                Yes, we highly recommend a trial session for bridal packages. It allows us to perfect the look, test product compatibility with your skin, and ensure you feel completely confident on your big day.
+              </div>
+            </details>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         CONTACT CTA
+    ═══════════════════════════════════════════════════════════ -->
+    <section id="contact-cta" class="py-20 sm:py-24">
       <div class="section-wrap">
         <div data-anim="fade-up"
           class="relative overflow-hidden rounded-[2rem] bg-silk-gradient px-7 py-12 text-white shadow-velvet sm:px-10 sm:py-16">
-
           <div class="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-amberpurple-soft/25 blur-2xl"></div>
           <div class="pointer-events-none absolute -bottom-20 -left-10 h-72 w-72 rounded-full bg-amberpurple-soft/15 blur-3xl"></div>
           <i class="fi fi-rr-sparkles pointer-events-none absolute right-10 top-10 text-6xl leading-none text-white/10"></i>
@@ -320,13 +469,13 @@
 
             <div class="flex flex-wrap gap-3">
               <a class="magnetic group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-amberpurple-deep transition hover:bg-amberpurple-ivory hover:shadow-glow"
-                href="https://wa.me/9512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20an%20appointment."
+                href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20an%20appointment."
                 target="_blank" rel="noreferrer">
                 <i class="fi fi-rr-calendar-check text-sm leading-none"></i>
                 Book Appointment
               </a>
               <a class="group inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-white backdrop-blur transition hover:border-white/50 hover:bg-white/15"
-                href="tel:+9512517604">
+                href="tel:+919512517604">
                 <i class="fi fi-rr-phone-call text-sm leading-none"></i>
                 Call Now
               </a>
@@ -339,23 +488,39 @@
 
   <div id="footer"></div>
 
-  <a href="https://wa.me/9512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20an%20appointment."
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20an%20appointment."
     target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"
     class="fixed bottom-6 right-6 z-40 grid h-[3.75rem] w-[3.75rem] place-items-center rounded-full bg-[#25D366] text-white shadow-[0_20px_42px_rgba(37,211,102,0.34)] transition hover:-translate-y-1">
-    <svg class="h-7 w-7" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-      <path
-        d="M19.05 4.94A9.86 9.86 0 0 0 12.02 2 9.95 9.95 0 0 0 3.4 16.92L2 22l5.22-1.37a10 10 0 0 0 4.78 1.22h.01A9.99 9.99 0 0 0 22 11.94a9.84 9.84 0 0 0-2.95-7Zm-7.04 15.2h-.01a8.31 8.31 0 0 1-4.23-1.16l-.3-.18-3.1.81.83-3.02-.2-.31a8.33 8.33 0 0 1-1.3-4.44c0-4.59 3.74-8.33 8.34-8.33 2.22 0 4.3.86 5.86 2.44a8.24 8.24 0 0 1 2.43 5.89 8.34 8.34 0 0 1-8.32 8.3Zm4.57-6.23c-.25-.13-1.47-.73-1.7-.81-.22-.08-.38-.12-.55.13-.16.24-.63.8-.77.96-.14.16-.28.18-.53.06-.25-.13-1.05-.39-1.99-1.23-.73-.65-1.22-1.46-1.37-1.7-.14-.24-.02-.38.11-.5.11-.11.25-.28.37-.43.13-.14.17-.24.25-.4.08-.16.04-.3-.02-.43-.06-.13-.55-1.33-.76-1.83-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.42.06-.64.3-.22.24-.84.82-.84 2 0 1.18.86 2.31.98 2.47.12.16 1.69 2.59 4.1 3.64.57.25 1.01.39 1.36.5.57.18 1.09.15 1.5.09.46-.07 1.47-.6 1.68-1.19.2-.58.2-1.08.14-1.18-.05-.1-.22-.16-.47-.29Z" />
-    </svg>
+    <i class="fi fi-brands-whatsapp text-2xl leading-none"></i>
   </a>
 
+  <!-- Back to top -->
   <button type="button" data-back-to-top aria-label="Back to top"
     class="pointer-events-none fixed bottom-24 right-6 z-40 grid h-12 w-12 translate-y-4 place-items-center rounded-full border border-amberpurple-deep/10 bg-white/90 text-amberpurple-deep opacity-0 shadow-velvet transition">
-    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" aria-hidden="true">
-      <path d="m6 15 6-6 6 6" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
-    </svg>
+    <i class="fi fi-rr-angle-small-up text-lg leading-none"></i>
   </button>
 
   <script src="./assets/js/layout.js"></script>
+  <script>
+    // Scroll reveal
+    (function () {
+      const els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(el => el.classList.add('is-visible'));
+        return;
+      }
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible');
+            io.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(el => io.observe(el));
+    })();
+  </script>
 </body>
 
 </html>
