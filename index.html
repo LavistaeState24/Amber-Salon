@@ -924,11 +924,109 @@
 
 
   <!-- ═══════════════════════════════════════════════════════════
+       COOKIE / PRIVACY CONSENT POPUP
+  ═══════════════════════════════════════════════════════════ -->
+  <div id="cookie-consent-overlay" role="dialog" aria-modal="true" aria-labelledby="cookie-consent-title"
+    class="hidden fixed inset-0 z-[80] flex items-end justify-center p-4 sm:items-center">
+    <div id="cookie-consent-backdrop" class="absolute inset-0 bg-amberpurple-deep/45 opacity-0 backdrop-blur-sm"></div>
+
+    <div id="cookie-consent-panel"
+      class="relative max-h-[90vh] w-full max-w-lg overflow-y-auto rounded-[1.75rem] border border-amberpurple-soft/40 bg-white p-7 opacity-0 shadow-velvet sm:p-8">
+      <div class="flex items-start gap-4">
+        <span class="grid h-12 w-12 shrink-0 place-items-center rounded-full bg-amberpurple-soft/40 text-amberpurple-rich">
+          <i class="fi fi-rr-shield-check text-xl leading-none"></i>
+        </span>
+        <div>
+          <h2 id="cookie-consent-title" class="font-display text-2xl text-amberpurple-deep">We value your privacy</h2>
+          <p class="mt-2 text-sm leading-7 text-amberpurple-deep/70">
+            We use cookies to enhance your browsing experience, personalize content and ads, and analyze our
+            traffic. By clicking "Accept All", you consent to our use of cookies. You can customize your
+            preferences at any time.
+          </p>
+        </div>
+      </div>
+
+      <div id="cookie-consent-options" class="hidden mt-5 grid gap-3 border-t border-amberpurple-soft/30 pt-5">
+        <label class="flex items-center justify-between gap-4 rounded-xl border border-amberpurple-soft/30 bg-amberpurple-ivory/60 px-4 py-3">
+          <span class="text-sm font-semibold text-amberpurple-deep">
+            Essential
+            <span class="mt-0.5 block text-xs font-normal text-amberpurple-deep/60">Always active — required for the site to work.</span>
+          </span>
+          <input type="checkbox" checked disabled class="h-5 w-5 rounded accent-amberpurple-rich" />
+        </label>
+        <label class="flex items-center justify-between gap-4 rounded-xl border border-amberpurple-soft/30 bg-white px-4 py-3">
+          <span class="text-sm font-semibold text-amberpurple-deep">
+            Analytics
+            <span class="mt-0.5 block text-xs font-normal text-amberpurple-deep/60">Helps us understand how visitors use the site.</span>
+          </span>
+          <input type="checkbox" data-consent-option="analytics" class="h-5 w-5 rounded accent-amberpurple-rich" />
+        </label>
+        <label class="flex items-center justify-between gap-4 rounded-xl border border-amberpurple-soft/30 bg-white px-4 py-3">
+          <span class="text-sm font-semibold text-amberpurple-deep">
+            Marketing
+            <span class="mt-0.5 block text-xs font-normal text-amberpurple-deep/60">Used to show relevant offers and promotions.</span>
+          </span>
+          <input type="checkbox" data-consent-option="marketing" class="h-5 w-5 rounded accent-amberpurple-rich" />
+        </label>
+      </div>
+
+      <div class="mt-6 flex flex-wrap items-center justify-end gap-3">
+        <button type="button" id="cookie-consent-customize"
+          class="rounded-full border border-amberpurple-deep/20 bg-white px-6 py-3 text-xs font-bold uppercase tracking-[0.18em] text-amberpurple-deep transition hover:border-amberpurple-rich/40 hover:bg-amberpurple-ivory">
+          Customize
+        </button>
+        <button type="button" id="cookie-consent-accept"
+          class="rounded-full bg-amberpurple-deep px-6 py-3 text-xs font-bold uppercase tracking-[0.18em] text-white shadow-glow transition hover:bg-amberpurple-rich">
+          Accept All
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       360° VIEW PROMPT POPUP
+  ═══════════════════════════════════════════════════════════ -->
+  <div id="view360-overlay" role="dialog" aria-modal="true" aria-labelledby="view360-title"
+    class="hidden fixed inset-0 z-[90] flex items-center justify-center p-4">
+    <div id="view360-backdrop" class="absolute inset-0 bg-amberpurple-deep/45 opacity-0 backdrop-blur-sm"></div>
+
+    <div id="view360-panel"
+      class="relative w-full max-w-md rounded-[1.75rem] border border-amberpurple-soft/40 bg-white p-8 text-center opacity-0 shadow-velvet">
+      <button type="button" id="view360-close" aria-label="Close"
+        class="absolute right-4 top-4 grid h-9 w-9 place-items-center rounded-full text-amberpurple-deep/50 transition hover:bg-amberpurple-soft/30 hover:text-amberpurple-deep">
+        <i class="fi fi-rr-cross-small text-lg leading-none"></i>
+      </button>
+
+      <span class="mx-auto grid h-14 w-14 place-items-center rounded-full bg-gradient-to-br from-amberpurple-deep to-amberpurple-rich text-white shadow-glow">
+        <i class="fi fi-rr-sparkles text-2xl leading-none"></i>
+      </span>
+
+      <h2 id="view360-title" class="mt-5 font-display text-2xl text-amberpurple-deep">Take a 360° look around?</h2>
+      <p class="mt-2 text-sm leading-7 text-amberpurple-deep/70">
+        Step inside Amber Salon by Heer and explore every room before your visit.
+      </p>
+
+      <div class="mt-7 flex flex-wrap items-center justify-center gap-3">
+        <button type="button" id="view360-no"
+          class="rounded-full border border-amberpurple-deep/20 bg-white px-7 py-3 text-xs font-bold uppercase tracking-[0.18em] text-amberpurple-deep transition hover:border-amberpurple-rich/40 hover:bg-amberpurple-ivory">
+          No, thanks
+        </button>
+        <button type="button" id="view360-yes"
+          class="rounded-full bg-amberpurple-deep px-7 py-3 text-xs font-bold uppercase tracking-[0.18em] text-white shadow-glow transition hover:bg-amberpurple-rich">
+          Yes, show me
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
        SCRIPTS — GSAP loads FIRST
   ═══════════════════════════════════════════════════════════ -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="./assets/js/layout.js"></script>
+  <script src="./assets/js/popups.js"></script>
 
   <script>
     (function () {

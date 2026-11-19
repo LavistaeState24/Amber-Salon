@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>360° Virtual Tour | Amber Salon by Heer, Ahmedabad</title>
+  <meta name="description"
+    content="Walk through Amber Salon by Heer in 360°. Explore the reception, hair studio, skin room and bridal suite before your visit." />
+  <link rel="stylesheet" href="./dist/styles.css" />
+  <link rel="stylesheet"
+    href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+  <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.css">
+
+  <!-- Tour styles live here so the page works without rebuilding dist/styles.css -->
+  <style>
+    .vt-stage {
+      position: relative;
+      height: clamp(420px, 74vh, 760px);
+      overflow: hidden;
+      border-radius: 2rem;
+      background: #2b1244;
+      isolation: isolate;
+    }
+    .vt-stage:fullscreen { height: 100vh; border-radius: 0; }
+    #vt-pano { position: absolute; inset: 0; background: #2b1244; }
+    #vt-pano .pnlm-load-box, #vt-pano .pnlm-about-msg { display: none !important; }
+
+    .vt-scrim {
+      position: absolute; inset: auto 0 0 0; z-index: 2; height: 45%;
+      pointer-events: none;
+      background: linear-gradient(to top, rgba(30, 12, 48, .86), rgba(30, 12, 48, 0));
+    }
+    .vt-caption {
+      position: absolute; left: 1.75rem; right: 1.75rem; bottom: 1.5rem; z-index: 3;
+      color: #fff; pointer-events: none;
+    }
+    .vt-caption a { pointer-events: auto; text-decoration: underline; }
+    .vt-room-name { font-size: clamp(2.25rem, 6vw, 4.25rem); line-height: 1; }
+    .vt-room-blurb { margin-top: .6rem; max-width: 34rem; color: rgba(255, 255, 255, .88); }
+    .vt-source { margin-top: .45rem; font-size: .8125rem; color: #d7c2eb; }
+
+    .vt-controls {
+      position: absolute; top: 1.25rem; right: 1.25rem; z-index: 3;
+      display: flex; gap: .5rem;
+    }
+    .vt-ctl {
+      display: grid; place-items: center; width: 2.75rem; height: 2.75rem;
+      border-radius: 999px; cursor: pointer; color: #fff;
+      border: 1px solid rgba(255, 255, 255, .4);
+      background: rgba(43, 18, 68, .72);
+      transition: background-color .2s, color .2s;
+    }
+    .vt-ctl:hover { background: #fff; color: #5e2b8a; }
+    .vt-ctl svg { width: 1.15rem; height: 1.15rem; }
+    .vt-ctl:focus-visible, .vt-room:focus-visible, .vt-door:focus-visible {
+      outline: 2px solid #d7c2eb; outline-offset: 2px;
+    }
+
+    .vt-status {
+      position: absolute; inset: 0; z-index: 4; display: grid; place-items: center;
+      padding: 1.5rem; text-align: center; color: #fff; background: #2b1244;
+    }
+    .vt-status[hidden] { display: none; }
+
+    /* Door markers inside the 360° view */
+    .vt-door {
+      display: flex; align-items: center; gap: .4rem; min-height: 44px;
+      padding: 0 1rem 0 .8rem; border-radius: 999px; cursor: pointer; white-space: nowrap;
+      font-size: .875rem; font-weight: 600; color: #fff;
+      background: rgba(94, 43, 138, .9); border: 1px solid rgba(255, 255, 255, .65);
+    }
+    .vt-door:hover { background: #fff; color: #5e2b8a; }
+    .vt-door svg { width: 1rem; height: 1rem; flex: none; }
+
+    .vt-room { cursor: pointer; }
+    .vt-room[aria-pressed="true"] { background: #fff; border-color: #5e2b8a; box-shadow: 0 0 0 1px #5e2b8a; }
+
+    @media (max-width: 640px) {
+      .vt-stage { height: min(64svh, 540px); border-radius: 1.5rem; }
+      .vt-caption { left: 1.1rem; right: 1.1rem; bottom: 1.1rem; }
+      .vt-controls { top: .85rem; right: .85rem; }
+    }
+  </style>
+</head>
+
+<body class="site-shell overflow-x-hidden">
+  <div id="navbar"></div>
+
+  <main class="overflow-x-hidden">
+
+    <nav aria-label="Breadcrumb" class="bg-amberpurple-ivory/80">
+      <div class="section-wrap flex items-center gap-2 py-3 text-sm text-amberpurple-deep/70">
+        <a href="./index.html" class="flex items-center gap-1 transition hover:text-amberpurple-deep">
+          <i class="fa-solid fa-house mr-2"></i> Home
+        </a>
+        <span class="text-amberpurple-deep/40">/</span>
+        <span>Virtual Tour</span>
+      </div>
+    </nav>
+
+    <!-- ═══════════════════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════════════════ -->
+    <section class="relative overflow-hidden bg-hero-radial py-20 sm:py-24 lg:py-28">
+      <div
+        class="pointer-events-none absolute -left-24 top-10 -z-10 h-72 w-72 rounded-full bg-amberpurple-soft/40 blur-3xl">
+      </div>
+      <div
+        class="pointer-events-none absolute -right-20 bottom-0 -z-10 h-80 w-80 rounded-full bg-amberpurple-rich/15 blur-3xl">
+      </div>
+
+      <div class="section-wrap">
+        <div class="mx-auto max-w-4xl text-center">
+
+          <div data-hero="eyebrow"
+            class="opacity-0 mx-auto inline-flex items-center gap-2.5 rounded-full border border-amberpurple-rich/20 bg-white/70 px-4 py-2 shadow-sm backdrop-blur">
+            <i class="fi fi-rr-sparkles text-sm leading-none text-amberpurple-rich"></i>
+            <span class="text-[10px] font-bold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-xs">
+              360° Virtual Tour
+            </span>
+          </div>
+
+          <h1 data-hero="title"
+            class="opacity-0 mx-auto mt-6 max-w-4xl font-display text-5xl leading-[0.94] tracking-[-0.035em] text-amberpurple-deep sm:text-6xl lg:text-7xl">
+            Step Inside
+            <span class="italic text-amberpurple-rich">Amber Salon by Heer</span>
+          </h1>
+
+          <p data-hero="lead"
+            class="opacity-0 mx-auto mt-6 max-w-2xl text-base leading-8 text-amberpurple-deep/70 sm:text-lg sm:leading-9">
+            Look around every room before you visit. Drag to explore, then follow the door markers to walk
+            through the salon.
+          </p>
+
+          <div data-hero="actions" class="opacity-0 mt-9 flex flex-wrap justify-center gap-3">
+            <a class="magnetic group inline-flex items-center gap-2 rounded-full bg-amberpurple-deep px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-white shadow-glow transition hover:bg-amberpurple-rich"
+              href="#salon-tour">
+              <i class="fi fi-rr-angle-small-down text-sm leading-none"></i>
+              Start the Tour
+            </a>
+            <a class="group inline-flex items-center gap-2 rounded-full border border-amberpurple-deep/20 bg-white/70 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-amberpurple-deep backdrop-blur transition hover:border-amberpurple-rich/40 hover:bg-white"
+              href="tel:+919512517604">
+              <i class="fi fi-rr-phone-call text-sm leading-none"></i>
+              Call Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         360° TOUR
+    ═══════════════════════════════════════════════════════════ -->
+    <section id="salon-tour" class="py-20 sm:py-24">
+      <div class="section-wrap">
+
+        <div class="mb-12 max-w-[44rem]">
+          <div data-anim="fade-up" class="opacity-0 inline-flex items-center gap-2">
+            <span class="h-2 w-2 rounded-full bg-amberpurple-rich"></span>
+            <span class="text-[11px] font-bold uppercase tracking-[0.24em] text-amberpurple-rich">Explore the Salon</span>
+          </div>
+          <h2 data-anim="split-words"
+            class="opacity-0 mt-4 font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl lg:text-6xl">
+            Walk through every room in 360°.
+          </h2>
+        </div>
+
+        <div id="vt-stage" class="vt-stage shadow-velvet" aria-label="360 degree view of the salon">
+          <div id="vt-pano"></div>
+          <div class="vt-scrim"></div>
+
+          <div class="vt-controls" role="group" aria-label="Tour controls">
+            <button id="vt-spin" type="button" class="vt-ctl" aria-label="Pause rotation"></button>
+            <button id="vt-out" type="button" class="vt-ctl" aria-label="Zoom out"></button>
+            <button id="vt-in" type="button" class="vt-ctl" aria-label="Zoom in"></button>
+            <button id="vt-full" type="button" class="vt-ctl" aria-label="View full screen"></button>
+          </div>
+
+          <div class="vt-caption" aria-live="polite">
+            <p id="vt-name" class="vt-room-name font-display"></p>
+            <p id="vt-blurb" class="vt-room-blurb text-sm leading-7"></p>
+            <p id="vt-source" class="vt-source"></p>
+          </div>
+
+          <div id="vt-status" class="vt-status" role="status">
+            <p class="font-display text-3xl">Opening the salon</p>
+          </div>
+        </div>
+
+        <div id="vt-rooms" class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-4"></div>
+      </div>
+    </section>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+         FINAL CTA
+    ═══════════════════════════════════════════════════════════ -->
+    <section id="contact-cta" class="py-20 sm:py-24">
+      <div class="section-wrap">
+        <div data-anim="fade-up"
+          class="relative overflow-hidden rounded-[2rem] bg-silk-gradient px-7 py-12 text-white shadow-velvet opacity-0 sm:px-10 sm:py-16">
+
+          <div class="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-amberpurple-soft/25 blur-2xl"></div>
+          <div class="pointer-events-none absolute -bottom-20 -left-10 h-72 w-72 rounded-full bg-amberpurple-soft/15 blur-3xl"></div>
+          <i class="fi fi-rr-sparkles pointer-events-none absolute right-10 top-10 text-6xl leading-none text-white/10"></i>
+
+          <div class="relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+            <div class="max-w-3xl">
+              <h2 class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-white sm:text-5xl lg:text-6xl">
+                Like What You See? Book Your Visit
+              </h2>
+              <p class="mt-5 max-w-2xl text-base leading-8 text-white/80 sm:text-lg sm:leading-9">
+                Reserve your session for hair, skin, makeup or bridal services.
+              </p>
+            </div>
+
+            <div class="flex flex-wrap gap-3">
+              <a class="magnetic group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-amberpurple-deep transition hover:bg-amberpurple-ivory hover:shadow-glow"
+                href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20an%20appointment."
+                target="_blank" rel="noreferrer">
+                <i class="fi fi-rr-calendar-check text-sm leading-none"></i>
+                Book Appointment
+              </a>
+              <a class="group inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-white backdrop-blur transition hover:border-white/50 hover:bg-white/15"
+                href="tel:+919512517604">
+                <i class="fi fi-rr-phone-call text-sm leading-none"></i>
+                Call Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div id="footer"></div>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       FLOATING BUTTONS
+  ═══════════════════════════════════════════════════════════ -->
+  <a href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20an%20appointment."
+    target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"
+    class="fixed bottom-6 right-6 z-40 grid h-[3.75rem] w-[3.75rem] place-items-center rounded-full bg-[#25D366] text-white shadow-[0_20px_42px_rgba(37,211,102,0.34)] transition hover:-translate-y-1">
+    <i class="fi fi-brands-whatsapp text-2xl leading-none"></i>
+  </a>
+
+  <button type="button" data-back-to-top aria-label="Back to top"
+    class="pointer-events-none fixed bottom-24 right-6 z-40 grid h-12 w-12 translate-y-4 place-items-center rounded-full border border-amberpurple-deep/10 bg-white/90 text-amberpurple-deep opacity-0 shadow-velvet transition">
+    <i class="fi fi-rr-angle-small-up text-lg leading-none"></i>
+  </button>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       SCRIPTS — GSAP first
+  ═══════════════════════════════════════════════════════════ -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/pannellum@2.5.6/build/pannellum.js"></script>
+  <script src="./assets/js/layout.js"></script>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       360° TOUR
+  ═══════════════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      /* ==================================================================
+         EDIT THIS PART FOR YOUR SALON
+         photo: 360° photo of the room (2:1 ratio JPG, 4096 × 2048 px).
+                Reception uses an Unsplash test photo for now. Replace it
+                with ./assets/images/tour/reception-360.jpg when yours is ready.
+         doors: markers that walk to another room.
+                yaw 0 = centre of photo, 90 = right, 180 = behind, -90 = left
+         If a photo can't load, a drawn sample room is shown instead.
+         ================================================================== */
+      const ROOMS = [
+        {
+          id: 'reception', name: 'Reception', icon: 'fi-rr-calendar-check',
+          blurb: 'Where your visit begins.',
+          photo: './assets/ambience.jpeg',
+          credit: { name: 'Tomáš Cocacola', url: './assets/images/p1.jpg' },
+          doors: [{ to: 'hair', yaw: 90 }, { to: 'skin', yaw: 0 }],
+          look: { wall: [94, 43, 138], floor: [226, 214, 232], glow: [240, 210, 255], size: [6, 7], gap: 3.2 },
+        },
+        {
+          id: 'hair', name: 'Hair Studio', icon: 'fi-rr-sparkles',
+          blurb: 'Cuts, colour, styling and hair spa.',
+          photo: './assets/p2.jpg',
+          doors: [{ to: 'reception', yaw: -90 }, { to: 'bridal', yaw: 0 }],
+          look: { wall: [58, 30, 86], floor: [168, 142, 186], glow: [255, 226, 200], size: [9, 7], gap: 1.7 },
+        },
+        {
+          id: 'skin', name: 'Skin & Facial Room', icon: 'fi-rr-heart',
+          blurb: 'Facials and skin care in a calm, private space.',
+          photo: './assets/p3.jpg',
+          doors: [{ to: 'reception', yaw: 180 }, { to: 'bridal', yaw: 90 }],
+          look: { wall: [215, 194, 235], floor: [130, 96, 150], glow: [255, 232, 214], size: [6, 5], gap: 2.4 },
+        },
+        {
+          id: 'bridal', name: 'Bridal Suite', icon: 'fi-rr-diamond',
+          blurb: 'Bridal and occasion makeup, prepared with care.',
+          photo: './assets/p4.jpg',
+          doors: [{ to: 'skin', yaw: -90 }, { to: 'hair', yaw: 180 }],
+          look: { wall: [150, 96, 170], floor: [232, 220, 236], glow: [255, 236, 214], size: [7, 6], gap: 2.0 },
+        },
+      ];
+      const FIRST_ROOM = 'reception';
+      /* ================================================================== */
+
+      const $ = (id) => document.getElementById(id);
+      const roomById = (id) => ROOMS.find((r) => r.id === id);
+      const calmMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const SPIN_SPEED = -1.2;
+      let viewer = null;
+      let spinning = !calmMotion;
+
+      const svg = (d, fill) => `<svg viewBox="0 0 24 24" fill="${fill ? 'currentColor' : 'none'}" stroke="${fill ? 'none' : 'currentColor'}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="${d}"/></svg>`;
+      const ICONS = {
+        pause: svg('M7 5h4v14H7zM13 5h4v14h-4z', true),
+        play: svg('M8 5v14l11-7z', true),
+        minus: svg('M5 12h14'),
+        plus: svg('M5 12h14M12 5v14'),
+        full: svg('M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5'),
+        door: svg('M5 12h14M13 6l6 6-6 6'),
+      };
+
+      /* Checks a photo loads and allows use in the viewer, and reads its shape */
+      function loadPhoto(src) {
+        return new Promise((done) => {
+          const img = new Image();
+          const timer = setTimeout(() => done(null), 15000);
+          img.crossOrigin = 'anonymous';
+          img.onload = () => { clearTimeout(timer); done(img.naturalWidth / img.naturalHeight); };
+          img.onerror = () => { clearTimeout(timer); done(null); };
+          img.src = src;
+        });
+      }
+
+      /* Draws a simple room as a 360° image, used until a real photo is added */
+      function drawSampleRoom(room) {
+        const W = 2048, H = 1024, HEIGHT = 3, EYE = 1.5;
+        const { wall, floor, glow, size, gap } = room.look;
+        const halfX = size[0] / 2, halfZ = size[1] / 2;
+        const doorWalls = room.doors.map((d) => ({ 0: 'N', 90: 'E', 180: 'S', '-90': 'W' }[d.yaw]));
+        const canvas = document.createElement('canvas');
+        canvas.width = W; canvas.height = H;
+        const ctx = canvas.getContext('2d');
+        const img = ctx.createImageData(W, H);
+        const mix = (a, b, t) => a.map((v, i) => v + (b[i] - v) * t);
+        const frac = (v) => ((v % 1) + 1) % 1;
+
+        for (let y = 0, p = 0; y < H; y++) {
+          const lat = (0.5 - (y + 0.5) / H) * Math.PI;
+          for (let x = 0; x < W; x++, p += 4) {
+            const lon = ((x + 0.5) / W - 0.5) * Math.PI * 2;
+            const dx = Math.sin(lon) * Math.cos(lat), dy = Math.sin(lat), dz = Math.cos(lon) * Math.cos(lat);
+            const tx = halfX / Math.abs(dx || 1e-6), tz = halfZ / Math.abs(dz || 1e-6);
+            const ty = dy > 0 ? (HEIGHT - EYE) / dy : EYE / -(dy || -1e-6);
+            const t = Math.min(tx, tz, ty);
+            const px = dx * t, py = EYE + dy * t, pz = dz * t;
+            let c;
+
+            if (t === ty && dy < 0) {
+              const tile = (Math.floor(px / 0.8 + 100) + Math.floor(pz / 0.8 + 100)) % 2;
+              c = mix(floor, [255, 255, 255], tile ? 0.12 : 0);
+              c = mix(c, glow, 0.2 * Math.max(0, 1 - Math.hypot(px, pz) / 4));
+            } else if (t === ty) {
+              const d = Math.hypot(frac(px / 1.6) - 0.5, frac(pz / 1.6) - 0.5);
+              c = mix([240, 232, 244], glow, Math.max(0, 1 - d * 2.4) * 0.6);
+              if (d < 0.07) c = [255, 250, 240];
+            } else {
+              const side = tx < tz ? (dx > 0 ? 'E' : 'W') : (dz > 0 ? 'N' : 'S');
+              const u = tx < tz ? pz : px;
+              const nearDoor = doorWalls.includes(side) && Math.abs(u) < 1.2;
+              const offset = Math.abs(frac(u / gap) - 0.5) * gap;
+              c = mix(wall, glow, Math.max(0, 0.3 - Math.abs(py - 2.8) * 0.25));
+              if (py < 0.12) c = mix(wall, [0, 0, 0], 0.4);
+              if (doorWalls.includes(side) && Math.abs(u) < 0.62 && py < 2.35) {
+                c = Math.abs(u) > 0.55 || py > 2.28 ? [215, 194, 235] : mix([250, 232, 255], [70, 34, 104], py / 2.3);
+              } else if (!nearDoor && offset < 0.46 && py > 1 && py < 2.1) {
+                c = mix([206, 200, 214], [246, 240, 250], (py - 1) / 1.1);
+              } else if (!nearDoor && offset < 0.55 && py > 0.72 && py < 0.8) {
+                c = [215, 194, 235];
+              }
+            }
+            const shade = 1.08 - Math.min(0.3, t * 0.05);
+            img.data[p] = c[0] * shade; img.data[p + 1] = c[1] * shade; img.data[p + 2] = c[2] * shade; img.data[p + 3] = 255;
+          }
+        }
+        ctx.putImageData(img, 0, 0);
+        return new Promise((done) => canvas.toBlob((b) => done(URL.createObjectURL(b)), 'image/jpeg', 0.9));
+      }
+
+      function doorMarker(div, args) {
+        div.innerHTML = ICONS.door + '<span></span>';
+        div.lastChild.textContent = args.label;
+      }
+
+      function buildRoomCards() {
+        $('vt-rooms').innerHTML = ROOMS.map((r) => `
+          <button type="button" data-room="${r.id}" aria-pressed="false" aria-controls="vt-stage"
+            class="vt-room group w-full rounded-2xl border border-amberpurple-soft/30 bg-white/50 p-7 text-left backdrop-blur transition duration-500 hover:-translate-y-1 hover:border-amberpurple-rich/40 hover:bg-white/80 hover:shadow-glow">
+            <span class="grid h-12 w-12 place-items-center rounded-full bg-amberpurple-soft/50 text-amberpurple-rich transition-transform duration-500 group-hover:scale-110">
+              <i class="fi ${r.icon} text-lg leading-none"></i>
+            </span>
+            <span class="mt-5 block font-display text-2xl text-amberpurple-deep">${r.name}</span>
+            <span class="mt-2 block text-sm leading-7 text-amberpurple-deep/70">${r.blurb}</span>
+          </button>`).join('');
+
+        $('vt-rooms').addEventListener('click', (e) => {
+          const card = e.target.closest('[data-room]');
+          if (card && viewer && card.dataset.room !== viewer.getScene()) viewer.loadScene(card.dataset.room);
+        });
+      }
+
+      function showRoom(id) {
+        const room = roomById(id);
+        $('vt-name').textContent = room.name;
+        $('vt-blurb').textContent = room.blurb;
+        $('vt-source').innerHTML = room.isSample
+          ? 'Sample room. Add your 360° photo to replace it.'
+          : room.credit
+            ? `Test photo by <a href="${room.credit.url}" target="_blank" rel="noreferrer">${room.credit.name} on Unsplash</a>`
+            : '';
+        document.querySelectorAll('#vt-rooms [data-room]').forEach((card) => {
+          card.setAttribute('aria-pressed', String(card.dataset.room === id));
+        });
+      }
+
+      function wireControls() {
+        const paintSpin = () => {
+          $('vt-spin').innerHTML = spinning ? ICONS.pause : ICONS.play;
+          $('vt-spin').setAttribute('aria-label', spinning ? 'Pause rotation' : 'Start rotation');
+        };
+        paintSpin();
+        $('vt-spin').onclick = () => {
+          spinning = !spinning;
+          spinning ? viewer.startAutoRotate(SPIN_SPEED) : viewer.stopAutoRotate();
+          paintSpin();
+        };
+        $('vt-in').innerHTML = ICONS.plus;
+        $('vt-out').innerHTML = ICONS.minus;
+        $('vt-full').innerHTML = ICONS.full;
+        $('vt-in').onclick = () => viewer.setHfov(viewer.getHfov() - 15);
+        $('vt-out').onclick = () => viewer.setHfov(viewer.getHfov() + 15);
+
+        if (!document.fullscreenEnabled) $('vt-full').hidden = true;
+        $('vt-full').onclick = () => document.fullscreenElement ? document.exitFullscreen() : $('vt-stage').requestFullscreen();
+        document.addEventListener('fullscreenchange', () => {
+          $('vt-full').setAttribute('aria-label', document.fullscreenElement ? 'Exit full screen' : 'View full screen');
+          viewer.resize();
+        });
+      }
+
+      async function startTour() {
+        await Promise.all(ROOMS.map(async (room) => {
+          room.ratio = await loadPhoto(room.photo);
+          room.isSample = room.ratio === null;
+        }));
+        for (const room of ROOMS) {
+          room.src = room.isSample ? await drawSampleRoom(room) : room.photo;
+        }
+
+        const scenes = {};
+        ROOMS.forEach((room) => {
+          /* Wider than 2:1 photos keep their proportions instead of stretching */
+          const vaov = room.isSample || room.ratio <= 2 ? 180 : 360 / room.ratio;
+          scenes[room.id] = {
+            type: 'equirectangular', panorama: room.src, haov: 360, vaov,
+            ...(vaov < 180 ? { minPitch: -Math.max(0, vaov / 2 - 30), maxPitch: Math.max(0, vaov / 2 - 30) } : {}),
+            hotSpots: room.doors.map((d) => ({
+              type: 'scene', sceneId: d.to, yaw: d.yaw, pitch: -6, targetYaw: 'sameAzimuth',
+              cssClass: 'vt-door', createTooltipFunc: doorMarker,
+              createTooltipArgs: { label: roomById(d.to).name },
+            })),
+          };
+        });
+
+        viewer = pannellum.viewer('vt-pano', {
+          default: {
+            firstScene: FIRST_ROOM, sceneFadeDuration: calmMotion ? 0 : 700, autoLoad: true,
+            hfov: 105, minHfov: 50, maxHfov: 120, showControls: false,
+            mouseZoom: false, keyboardZoom: false, backgroundColor: [0.17, 0.07, 0.27],
+            autoRotate: calmMotion ? 0 : SPIN_SPEED, autoRotateInactivityDelay: 4000,
+          },
+          scenes,
+        });
+
+        viewer.on('load', () => { $('vt-status').hidden = true; });
+        viewer.on('scenechange', showRoom);
+        viewer.on('error', () => {
+          $('vt-status').hidden = false;
+          $('vt-status').innerHTML = '<p class="max-w-2xl text-base leading-8">The 360° view could not open. Check the photo path, then open this page through Live Server.</p>';
+        });
+
+        showRoom(FIRST_ROOM);
+        wireControls();
+      }
+
+      buildRoomCards();
+      showRoom(FIRST_ROOM);
+
+      /* Loads the tour only when a visitor reaches it, so the page opens fast */
+      const watcher = new IntersectionObserver((entries) => {
+        if (entries[0].isIntersecting) { watcher.disconnect(); startTour(); }
+      }, { rootMargin: '400px' });
+      watcher.observe($('vt-stage'));
+    })();
+  </script>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PAGE ANIMATIONS (same as the contact page)
+  ═══════════════════════════════════════════════════════════ -->
+  <script>
+    (function () {
+      const revealTargets = document.querySelectorAll('[data-anim].opacity-0, [data-hero].opacity-0');
+
+      if (!window.gsap || !window.ScrollTrigger) {
+        revealTargets.forEach((el) => el.classList.remove('opacity-0'));
+        return;
+      }
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        revealTargets.forEach((el) => el.classList.remove('opacity-0'));
+        return;
+      }
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      function splitWords(el) {
+        if (!el) return [];
+        const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+        const nodes = [];
+        let n;
+        while ((n = walker.nextNode())) if (n.textContent.trim()) nodes.push(n);
+
+        nodes.forEach((node) => {
+          const parts = node.textContent.split(/(\s+)/);
+          const frag = document.createDocumentFragment();
+          parts.forEach((part) => {
+            if (part.trim()) {
+              const span = document.createElement('span');
+              span.textContent = part;
+              span.style.display = 'inline-block';
+              span.style.willChange = 'transform, opacity';
+              frag.appendChild(span);
+            } else if (part) frag.appendChild(document.createTextNode(part));
+          });
+          node.parentNode.replaceChild(frag, node);
+        });
+        return Array.from(el.querySelectorAll('span'));
+      }
+
+      const heroTitle = document.querySelector('[data-hero="title"]');
+      const heroWords = splitWords(heroTitle);
+      gsap.set(heroTitle, { opacity: 1 });
+      gsap.set(heroWords, { opacity: 0, y: 60 });
+
+      gsap.timeline({ defaults: { ease: 'power4.out' } })
+        .fromTo('[data-hero="eyebrow"]', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.9 }, 0.1)
+        .to(heroWords, { opacity: 1, y: 0, duration: 1, stagger: 0.05 }, 0.25)
+        .fromTo('[data-hero="lead"]', { opacity: 0, y: 30 }, { opacity: 1, y: 0, duration: 0.9 }, 0.85)
+        .fromTo('[data-hero="actions"]', { opacity: 0, y: 20 }, { opacity: 1, y: 0, duration: 0.8 }, 1.05);
+
+      const fadeUps = gsap.utils.toArray('[data-anim="fade-up"]');
+      gsap.set(fadeUps, { opacity: 0, y: 40 });
+      ScrollTrigger.batch(fadeUps, {
+        start: 'top 88%',
+        once: true,
+        onEnter: (batch) => gsap.to(batch, { opacity: 1, y: 0, duration: 1, stagger: 0.09, ease: 'power3.out', overwrite: true }),
+      });
+
+      gsap.utils.toArray('[data-anim="split-words"]').forEach((h2) => {
+        const words = splitWords(h2);
+        gsap.set(h2, { opacity: 1 });
+        gsap.set(words, { opacity: 0, y: 40 });
+        ScrollTrigger.create({
+          trigger: h2,
+          start: 'top 85%',
+          once: true,
+          onEnter: () => gsap.to(words, { opacity: 1, y: 0, duration: 0.9, stagger: 0.04, ease: 'power3.out' }),
+        });
+      });
+
+      gsap.utils.toArray('.magnetic').forEach((btn) => {
+        const strength = 0.25;
+        btn.addEventListener('mousemove', (e) => {
+          const r = btn.getBoundingClientRect();
+          gsap.to(btn, {
+            x: (e.clientX - r.left - r.width / 2) * strength,
+            y: (e.clientY - r.top - r.height / 2) * strength,
+            duration: 0.5, ease: 'power3.out',
+          });
+        });
+        btn.addEventListener('mouseleave', () =>
+          gsap.to(btn, { x: 0, y: 0, duration: 0.7, ease: 'elastic.out(1, 0.35)' })
+        );
+      });
+
+      window.addEventListener('load', () => ScrollTrigger.refresh());
+    })();
+  </script>
+</body>
+
+</html>
