@@ -2,3 +2,5 @@ node_modules/
 dist/*
 !dist/styles.css
 *.log
+.claude/
+.serena/

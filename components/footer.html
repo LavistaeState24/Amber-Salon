@@ -9,15 +9,15 @@
 
   <!-- Extra gradient wash for depth (blends over the silk gradient) -->
   <div aria-hidden="true"
-    class="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(49,18,75,0.85)_10%,rgba(94,43,138,0.55)_10%,rgba(49,18,75,0.92)_100%)]"></div>
+    class="pointer-events-none absolute inset-0"></div>
 
   <!-- Ambient glows behind the glass so the blur has colour to pick up -->
   <div aria-hidden="true"
     class="pointer-events-none absolute -left-24 top-0 h-72 w-72 rounded-full bg-amberpurple-rich/50 blur-3xl"></div>
   <div aria-hidden="true"
-    class="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-amberpurple-soft/25 blur-3xl"></div>
+    class="pointer-events-none absolute -right-20 bottom-0 h-72 w-72 rounded-full bg-amberpurple-soft/75 blur-3xl"></div>
   <div aria-hidden="true"
-    class="pointer-events-none absolute left-1/2 top-1/3 h-64 w-64 -translate-x-1/2 rounded-full bg-fuchsia-400/10 blur-3xl"></div>
+    class="pointer-events-none absolute left-1/2 top-1/3 h-14 w-14 -translate-x-1/2 rounded-sm bg-fuchsia-400/50 blur-3xl"></div>
 
   <div class="section-wrap relative">
 
@@ -25,13 +25,8 @@
     <div
       class="relative rounded-[2rem] border border-white/20 p-7 sm:p-10
              bg-[linear-gradient(135deg,rgba(255,255,255,0.14)_0%,rgba(255,255,255,0.06)_45%,rgba(255,255,255,0.10)_100%)]
-             backdrop-blur-[28px] backdrop-saturate-[180%]
-             shadow-[0_8px_32px_rgba(0,0,0,0.35),inset_0_1px_0_rgba(255,255,255,0.35),inset_0_-1px_0_rgba(255,255,255,0.08)]
-             before:pointer-events-none before:absolute before:inset-0 before:rounded-[inherit] before:opacity-90
-             before:bg-[linear-gradient(120deg,rgba(255,255,255,0.22)_0%,rgba(255,255,255,0.06)_22%,transparent_55%)]
-             before:content-['']
-             after:pointer-events-none after:absolute after:left-[8%] after:right-[8%] after:top-0 after:h-px
-             after:bg-[linear-gradient(90deg,transparent,rgba(255,255,255,0.75),transparent)]
+             backdrop-blur-[50px]
+              before:absolute before:inset-0 before:rounded-[2rem] before:bg-[linear-gradient(135deg,rgba(255,255,255,0.14)_0%,rgba(255,255,255,0.06)_45%,rgba(255,255,255,0.10)_100%)] before:opacity-0
              after:content-['']">
 
       <div class="grid gap-10 lg:grid-cols-4 md:grid-cols-2 sm:grid-cols-1">

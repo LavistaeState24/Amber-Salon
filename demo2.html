@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>360° Virtual Tour | Amber Salon by Heer, Ahmedabad</title>
+    <meta name="description"
+        content="Walk through Amber Salon by Heer in 360°. Explore the reception, hair studio, skin room and bridal suite before your visit." />
+    <link rel="stylesheet" href="./dist/styles.css" />
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css">
+    <link rel="stylesheet"
+        href="https://cdn-uicons.flaticon.com/2.6.0/uicons-solid-rounded/css/uicons-solid-rounded.css">
+    <link rel="stylesheet" href="https://cdn-uicons.flaticon.com/2.6.0/uicons-brands/css/uicons-brands.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.css" />
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/pannellum@2.5.7/build/pannellum.js"></script>
+    <style>
+        #panorama {
+            width: 100%;
+            height: clamp(340px, 62svh, 480px);
+            overflow: hidden;
+            border-radius: 1.25rem;
+            background: #2b1244;
+        }
+
+        .tour-bar {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .tour-arrows {
+            display: flex;
+            gap: .5rem;
+        }
+
+        .tour-arrow {
+            min-height: 44px;
+            padding: 0 1.1rem;
+            border: 1px solid rgba(94, 43, 138, .3);
+            border-radius: 999px;
+            background: #fff;
+            color: #5e2b8a;
+            font-size: .875rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color .2s, color .2s;
+        }
+
+        .tour-arrow:hover {
+            background: #5e2b8a;
+            color: #fff;
+        }
+
+        .tour-rooms {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: .625rem;
+            margin-top: 1rem;
+        }
+
+        .tour-room {
+            min-height: 52px;
+            padding: .5rem .75rem;
+            border: 1px solid rgba(94, 43, 138, .22);
+            border-radius: .875rem;
+            background: rgba(255, 255, 255, .75);
+            color: #5e2b8a;
+            font-size: .875rem;
+            font-weight: 600;
+            line-height: 1.25;
+            cursor: pointer;
+            transition: background-color .2s, color .2s, border-color .2s;
+        }
+
+        .tour-room:last-child:nth-child(odd) {
+            grid-column: 1 / -1;
+        }
+
+        .tour-room:hover {
+            border-color: #5e2b8a;
+        }
+
+        .tour-room[aria-pressed="true"] {
+            border-color: #5e2b8a;
+            background: #5e2b8a;
+            color: #fff;
+        }
+
+        .tour-arrow:focus-visible,
+        .tour-room:focus-visible {
+            outline: 2px solid #5e2b8a;
+            outline-offset: 2px;
+        }
+
+        #tour-status:empty {
+            display: none;
+        }
+
+        #tour-status {
+            margin-top: .75rem;
+            color: #5e2b8a;
+            font-size: .875rem;
+        }
+
+        @media (min-width: 640px) {
+            #panorama {
+                height: clamp(420px, 60vh, 560px);
+                border-radius: 1.75rem;
+            }
+
+            .tour-rooms {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .tour-room:last-child:nth-child(odd) {
+                grid-column: auto;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            #panorama {
+                height: clamp(500px, 72vh, 720px);
+            }
+
+            .tour-rooms {
+                grid-template-columns: repeat(5, minmax(0, 1fr));
+            }
+        }
+    </style>
+</head>
+
+<body class="site-shell overflow-x-hidden">
+    <div id="navbar"></div>
+
+    <main class="overflow-x-hidden">
+
+        <nav aria-label="Breadcrumb" class="bg-amberpurple-ivory/80">
+            <div class="section-wrap flex items-center gap-2 py-3 text-sm text-amberpurple-deep/70">
+                <a href="./index.html" class="flex items-center gap-1 transition hover:text-amberpurple-deep">
+                    <i class="fa-solid fa-house mr-2"></i> Home
+                </a>
+                <span class="text-amberpurple-deep/40">/</span>
+                <span>Virtual Tour</span>
+            </div>
+        </nav>
+
+        <!-- ═══════════════════════════════════════════════════════════
+         HERO
+    ═══════════════════════════════════════════════════════════ -->
+        <section class="relative overflow-hidden bg-hero-radial py-20 sm:py-24 lg:py-28">
+            <div
+                class="pointer-events-none absolute -left-24 top-10 -z-10 h-72 w-72 rounded-full bg-amberpurple-soft/40 blur-3xl">
+            </div>
+            <div
+                class="pointer-events-none absolute -right-20 bottom-0 -z-10 h-80 w-80 rounded-full bg-amberpurple-rich/15 blur-3xl">
+            </div>
+
+            <div class="section-wrap">
+                <div class="mx-auto max-w-4xl text-center">
+
+                    <div data-hero="eyebrow"
+                        class="opacity-0 mx-auto inline-flex items-center gap-2.5 rounded-full border border-amberpurple-rich/20 bg-white/70 px-4 py-2 shadow-sm backdrop-blur">
+                        <i class="fi fi-rr-sparkles text-sm leading-none text-amberpurple-rich"></i>
+                        <span
+                            class="text-[10px] font-bold uppercase tracking-[0.28em] text-amberpurple-rich sm:text-xs">
+                            360° Virtual Tour
+                        </span>
+                    </div>
+
+                    <h1 data-hero="title"
+                        class="opacity-0 mx-auto mt-6 max-w-4xl font-display text-5xl leading-[0.94] tracking-[-0.035em] text-amberpurple-deep sm:text-6xl lg:text-7xl">
+                        Step Inside
+                        <span class="italic text-amberpurple-rich">Amber Salon by Heer</span>
+                    </h1>
+
+                    <p data-hero="lead"
+                        class="opacity-0 mx-auto mt-6 max-w-2xl text-base leading-8 text-amberpurple-deep/70 sm:text-lg sm:leading-9">
+                        Look around every room before you visit. Drag to explore, then follow the door markers to walk
+                        through the salon.
+                    </p>
+
+                    <div data-hero="actions" class="opacity-0 mt-9 flex flex-wrap justify-center gap-3">
+                        <a class="magnetic group inline-flex items-center gap-2 rounded-full bg-amberpurple-deep px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-white shadow-glow transition hover:bg-amberpurple-rich"
+                            href="#salon-tour">
+                            <i class="fi fi-rr-angle-small-down text-sm leading-none"></i>
+                            Start the Tour
+                        </a>
+                        <a class="group inline-flex items-center gap-2 rounded-full border border-amberpurple-deep/20 bg-white/70 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-amberpurple-deep backdrop-blur transition hover:border-amberpurple-rich/40 hover:bg-white"
+                            href="tel:+919512517604">
+                            <i class="fi fi-rr-phone-call text-sm leading-none"></i>
+                            Call Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- ═══════════════════════════════════════════════════════════
+         360° TOUR
+    ═══════════════════════════════════════════════════════════ -->
+        <section id="salon-tour" class="py-16 sm:py-20" aria-labelledby="tour-room-name">
+            <div class="section-wrap">
+                <div class="tour-bar">
+                    <h2 id="tour-room-name" class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-amberpurple-deep sm:text-5xl" aria-live="polite"></h2>
+                    <div class="tour-arrows">
+                        <button id="tour-prev" type="button" class="tour-arrow">Previous</button>
+                        <button id="tour-next" type="button" class="tour-arrow">Next</button>
+                    </div>
+                </div>
+
+                <div id="panorama" class="shadow-velvet"></div>
+                <p id="tour-status" role="status"></p>
+                <div id="tour-rooms" class="tour-rooms"></div>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════════════════════
+         FINAL CTA
+    ═══════════════════════════════════════════════════════════ -->
+        <section id="contact-cta" class="py-20 sm:py-24">
+            <div class="section-wrap">
+                <div data-anim="fade-up"
+                    class="relative overflow-hidden rounded-[2rem] bg-silk-gradient px-7 py-12 text-white shadow-velvet opacity-0 sm:px-10 sm:py-16">
+
+                    <div
+                        class="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-amberpurple-soft/25 blur-2xl">
+                    </div>
+                    <div
+                        class="pointer-events-none absolute -bottom-20 -left-10 h-72 w-72 rounded-full bg-amberpurple-soft/15 blur-3xl">
+                    </div>
+                    <i
+                        class="fi fi-rr-sparkles pointer-events-none absolute right-10 top-10 text-6xl leading-none text-white/10"></i>
+
+                    <div class="relative flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+                        <div class="max-w-3xl">
+                            <h2
+                                class="font-display text-4xl leading-[0.95] tracking-[-0.02em] text-white sm:text-5xl lg:text-6xl">
+                                Like What You See? Book Your Visit
+                            </h2>
+                            <p class="mt-5 max-w-2xl text-base leading-8 text-white/80 sm:text-lg sm:leading-9">
+                                Reserve your session for hair, skin, makeup or bridal services.
+                            </p>
+                        </div>
+
+                        <div class="flex flex-wrap gap-3">
+                            <a class="magnetic group inline-flex items-center gap-2 rounded-full bg-white px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-amberpurple-deep transition hover:bg-amberpurple-ivory hover:shadow-glow"
+                                href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20an%20appointment."
+                                target="_blank" rel="noreferrer">
+                                <i class="fi fi-rr-calendar-check text-sm leading-none"></i>
+                                Book Appointment
+                            </a>
+                            <a class="group inline-flex items-center gap-2 rounded-full border border-white/30 bg-white/10 px-6 py-3.5 text-xs font-bold uppercase tracking-[0.18em] text-white backdrop-blur transition hover:border-white/50 hover:bg-white/15"
+                                href="tel:+919512517604">
+                                <i class="fi fi-rr-phone-call text-sm leading-none"></i>
+                                Call Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <div id="footer"></div>
+
+    <!-- ═══════════════════════════════════════════════════════════
+       FLOATING BUTTONS
+  ═══════════════════════════════════════════════════════════ -->
+    <a href="https://wa.me/919512517604?text=Hello%20Amber%20Salon%20by%20Heer%2C%20I%20want%20to%20book%20an%20appointment."
+        target="_blank" rel="noreferrer" aria-label="Chat on WhatsApp"
+        class="fixed bottom-6 right-6 z-40 grid h-[3.75rem] w-[3.75rem] place-items-center rounded-full bg-[#25D366] text-white shadow-[0_20px_42px_rgba(37,211,102,0.34)] transition hover:-translate-y-1">
+        <i class="fi fi-brands-whatsapp text-2xl leading-none"></i>
+    </a>
+
+    <button type="button" data-back-to-top aria-label="Back to top"
+        class="pointer-events-none fixed bottom-24 right-6 z-40 grid h-12 w-12 translate-y-4 place-items-center rounded-full border border-amberpurple-deep/10 bg-white/90 text-amberpurple-deep opacity-0 shadow-velvet transition">
+        <i class="fi fi-rr-angle-small-up text-lg leading-none"></i>
+    </button>
+
+
+    <!-- ═══════════════════════════════════════════════════════════
+       SCRIPTS — GSAP first
+  ═══════════════════════════════════════════════════════════ -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="./assets/js/layout.js"></script>
+
+    <!-- ═══════════════════════════════════════════════════════════
+       360° TOUR
+  ═══════════════════════════════════════════════════════════ -->
+    <script>
+        (function () {
+            /* ==========================================================
+               YOUR 360° PHOTOS
+               To add a room, copy one line. To use your own photo, change
+               the path, for example: ./assets/images/tour/reception-360.jpg
+               These are Pannellum sample photos for testing only.
+               ========================================================== */
+            const ROOMS = [
+                { id: 'reception', name: 'Reception', photo: 'https://pannellum.org/images/bma-1.jpg' },
+                { id: 'hair', name: 'Hair Studio', photo: 'https://pannellum.org/images/bloomberg.jpg' },
+                { id: 'skin', name: 'Skin & Facial Room', photo: 'https://pannellum.org/images/bma-0.jpg' },
+                { id: 'makeup', name: 'Makeup Studio', photo: 'https://pannellum.org/images/from-tree.jpg' },
+                { id: 'bridal', name: 'Bridal Suite', photo: 'https://pannellum.org/images/alma.jpg' },
+            ];
+
+            const nameEl = document.getElementById('tour-room-name');
+            const statusEl = document.getElementById('tour-status');
+            const roomsEl = document.getElementById('tour-rooms');
+            const calmMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const roomAt = (i) => ROOMS[(i + ROOMS.length) % ROOMS.length];
+
+            /* Each room links to the previous and next room inside the 360° view */
+            const scenes = {};
+            ROOMS.forEach((room, i) => {
+                scenes[room.id] = {
+                    type: 'equirectangular',
+                    panorama: room.photo,
+                    hotSpots: [
+                        { type: 'scene', pitch: -8, yaw: -35, text: roomAt(i - 1).name, sceneId: roomAt(i - 1).id },
+                        { type: 'scene', pitch: -8, yaw: 35, text: roomAt(i + 1).name, sceneId: roomAt(i + 1).id },
+                    ],
+                };
+            });
+
+            const viewer = pannellum.viewer('panorama', {
+                default: {
+                    firstScene: ROOMS[0].id,
+                    autoLoad: true,
+                    sceneFadeDuration: calmMotion ? 0 : 700,
+                    hfov: window.innerWidth < 640 ? 75 : 100,
+                    mouseZoom: false, /* lets visitors scroll the page over the photo */
+                    autoRotate: calmMotion ? 0 : -1.5,
+                    autoRotateInactivityDelay: 4000,
+                },
+                scenes,
+            });
+
+            roomsEl.innerHTML = ROOMS.map((room) =>
+                `<button type="button" class="tour-room" data-room="${room.id}" aria-pressed="false">${room.name.replace('&', '&amp;')}</button>`
+            ).join('');
+
+            function showRoom(id) {
+                nameEl.textContent = ROOMS.find((room) => room.id === id).name;
+                statusEl.textContent = '';
+                roomsEl.querySelectorAll('[data-room]').forEach((button) => {
+                    button.setAttribute('aria-pressed', String(button.dataset.room === id));
+                });
+            }
+
+            function goTo(id) {
+                if (id !== viewer.getScene()) viewer.loadScene(id);
+            }
+
+            function step(by) {
+                const current = ROOMS.findIndex((room) => room.id === viewer.getScene());
+                goTo(roomAt(current + by).id);
+            }
+
+            roomsEl.addEventListener('click', (event) => {
+                const button = event.target.closest('[data-room]');
+                if (button) goTo(button.dataset.room);
+            });
+            document.getElementById('tour-prev').addEventListener('click', () => step(-1));
+            document.getElementById('tour-next').addEventListener('click', () => step(1));
+
+            viewer.on('scenechange', showRoom);
+            viewer.on('error', () => {
+                statusEl.textContent = 'This 360° photo did not load. Check its file path, or choose another room.';
+            });
+
+            showRoom(ROOMS[0].id);
+        })();
+    </script>
+    <!-- ═══════════════════════════════════════════════════════════
+       PAGE ANIMATIONS (shows the hero and CTA that start hidden)
+  ═══════════════════════════════════════════════════════════ -->
+    <script>
+        (function () {
+            const hidden = document.querySelectorAll('[data-hero].opacity-0, [data-anim].opacity-0');
+            const calmMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+            if (!window.gsap || !window.ScrollTrigger || calmMotion) {
+                hidden.forEach((el) => el.classList.remove('opacity-0'));
+                return;
+            }
+
+            gsap.registerPlugin(ScrollTrigger);
+
+            gsap.fromTo('[data-hero]', { opacity: 0, y: 28 }, {
+                opacity: 1, y: 0, duration: 0.9, stagger: 0.12, ease: 'power3.out',
+            });
+
+            gsap.utils.toArray('[data-anim="fade-up"]').forEach((el) => {
+                gsap.fromTo(el, { opacity: 0, y: 40 }, {
+                    opacity: 1, y: 0, duration: 1, ease: 'power3.out',
+                    scrollTrigger: { trigger: el, start: 'top 88%', once: true },
+                });
+            });
+
+            window.addEventListener('load', () => ScrollTrigger.refresh());
+        })();
+    </script>
+
+</body>
+
+</html>
